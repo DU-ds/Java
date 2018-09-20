@@ -22,7 +22,7 @@ public class ListOfNumbers
         }
     }
 
-    public void writeList() 
+    public void writeList() throws IOException, IndexOutOfBoundsException 
     {
     // The FileWriter constructor throws IOException, which must be caught.
         PrintWriter out = 0 // the tutorial says to use null, not 0
@@ -31,21 +31,24 @@ public class ListOfNumbers
 
             PrintWriter out = new PrintWriter(new FileWriter("OutFile.txt"));
 
-            for (int i = 0; i < SIZE; i++) {
+            for (int i = 0; i < SIZE; i++) 
+            {
             // The get(int) method throws IndexOutOfBoundsException, which must be caught.
             out.println("Value at: " + i + " = " + list.get(i));
             }
         
         
-        } catch (IOException er) 
-        {   System.err.println("IOException :" + er.getMessage() );
+        } catch (IOException e) 
+        
+        {   System.err.println("IOException :" + e.getMessage() );
 
         }
 
-        catch (IndexOutOfBoundsException er) 
-        {   System.err.println("IndexOutOfBoundsException: " + er.getMessage() );
+        catch (IndexOutOfBoundsException e) 
+        {   System.err.println("IndexOutOfBoundsException: " + e.getMessage() );
 
-        } finally{
+        } finally
+        {
             if( out != 0)  // update to null if out is declared as null instead of 0
             { 
             out.close();  //I omitted the print statements
