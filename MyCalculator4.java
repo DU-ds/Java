@@ -55,6 +55,16 @@ public class MyCalculator4
         int c = a / b;
         return c;
     }
+    /** private static int mod(int a, int b)
+     *  
+     * @param a
+     * @param b
+     * @return a (modulo b)
+     */
+    private static int mod(int a, int b){
+        int c = a % b;
+        return c;
+    }
     /**
      * @param args the command line arguments
      */
@@ -64,7 +74,7 @@ public class MyCalculator4
         
         
         int operation;
-        System.out.println("1: add, 2: subtract, 3: multiply, 4: divide");
+        System.out.println("1: add, 2: subtract, 3: multiply, 4: divide, 5 mod");
         do 
         {
             operation = userInput.nextInt();
@@ -120,11 +130,22 @@ public class MyCalculator4
                 C4 = divide(A4, B4);
                 System.out.println(A4 + "/" + B4 + " = " + C4);
                 break;
+            case 5 :
+                System.out.println("Enter a integer: ");
+                int A5;
+                A5 = userInput.nextInt();
+                System.out.println("Enter another integer: ");
+                int B5;
+                B5 = userInput.nextInt();
+                int C5;
+                C5 = mod(A5, B5);
+                System.out.println(A5 + " (mod " + B5 + ") = " + C5 );
+                break;
             default :
                 System.out.println("Not a valid operation. Try again.");
             }
         }
-        while(!(operation == 1 || operation == 2 || operation == 3 || operation == 4 ));
+        while(!(operation == 1 || operation == 2 || operation == 3 || operation == 4 || operation == 5));
         
         
     }
