@@ -45,6 +45,13 @@ class Shoes {
         shoesAreTied = this.shoesTied;
         return shoesAreTied;
     }
+    public void setShoesTied(boolean t){
+        this.shoesTied = t;
+    }
+    public void setShoesOn( boolean t){
+        this.shoesOn = t;
+    }
+    // I didn't add the others since you can't easily change size or color once you have shoes.
 
     public static void main(String[] args) {
         Shoes shoe1 = new Shoes(30, "blue", true, true);
@@ -53,9 +60,13 @@ class Shoes {
         System.out.println(shoe1.getShoeSizeInCentemeters());  //30
         System.out.println(shoe1.getShoesTied());             //true
         System.out.println(shoe3.getShoeColor());            //green
-        System.out.println(shoe2.getShoesOn());            //false
-    
+        System.out.println(shoe2.getShoesOn());             //false
+        shoe2.setShoesOn(true);
+        shoe2.setShoesTied(true);
+        System.out.println(shoe2.getShoesOn());           //true       
+        System.out.println(shoe2.getShoesTied());        //true 
     }
+
 
 
 }
