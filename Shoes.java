@@ -27,16 +27,35 @@ class Shoes {
     }
     public int getShoeSizeInCentemeters(){
         int shoeSize;
-        shoeSize = this.sizeInCentemeters;
+        shoeSize = this.sizeInCentemeters;  // this doesn't leak out a reference to the private varaible right?
         return shoeSize;
+    }
+    public String getShoeColor(){
+        String color;
+        color = this.shoeColor;
+        return color;
+    }
+    public boolean getShoesOn(){
+        boolean shoesAreOn;
+        shoesAreOn = this.shoesOn;
+        return shoesAreOn;
+    }
+    public boolean getShoesTied(){
+        boolean shoesAreTied;
+        shoesAreTied = this.shoesTied;
+        return shoesAreTied;
     }
 
     public static void main(String[] args) {
         Shoes shoe1 = new Shoes(30, "blue", true, true);
         Shoes shoe2 = new Shoes();
         Shoes shoe3 = new Shoes(28, "green");
-        System.out.println(shoe1.getShoeSizeInCentemeters());
-        
+        System.out.println(shoe1.getShoeSizeInCentemeters());  //30
+        System.out.println(shoe1.getShoesTied());             //true
+        System.out.println(shoe3.getShoeColor());            //green
+        System.out.println(shoe2.getShoesOn());            //false
+    
     }
+
 
 }
