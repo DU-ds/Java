@@ -25,30 +25,56 @@ class Shoes {
         this.shoesOn = false;
         this.shoesTied = false;
     }
-    public int getShoeSizeInCentemeters(){
+    /** public int getShoeSizeInCentemeters()
+     * requires: nothing
+     * effects: returns the size value of the Shoes object 
+     */
+    private int getShoeSizeInCentemeters(){
         int shoeSize;
         shoeSize = this.sizeInCentemeters;  // this doesn't leak out a reference to the private varaible right?
         return shoeSize;
     }
-    public String getShoeColor(){
+    /** private String getShoeColor()
+    *  requires: nothing 
+    *  effects: returns shoe objects color value
+    */
+    private String getShoeColor(){
         String color;
         color = this.shoeColor;
         return color;
     }
-    public boolean getShoesOn(){
+    /** private boolean getShoesOn() 
+    *   requires: nothing
+    *   effects: returns Shoes object is on or not on
+    */
+
+    private boolean getShoesOn(){
         boolean shoesAreOn;
         shoesAreOn = this.shoesOn;
         return shoesAreOn;
     }
-    public boolean getShoesTied(){
+
+    /** private boolean getShoesTied()
+     *  requires: nothing
+     *  effects:  returns Shoes object tied or not tied
+     */
+    private boolean getShoesTied(){
         boolean shoesAreTied;
         shoesAreTied = this.shoesTied;
         return shoesAreTied;
     }
-    public void setShoesTied(boolean t){
+    /** private void setShoesTied(boolean t)
+     *  requires: nothing
+     *  effects:  set Shoes tied attribute to value t
+     */
+    private void setShoesTied(boolean t){
         this.shoesTied = t;
     }
-    public void setShoesOn( boolean t){
+    /** private void setShoesOn( boolean t)
+     *  requires: nothing
+     *  effects:  sets Shoes object on to value t
+     */
+    private void setShoesOn( boolean t){
         this.shoesOn = t;
     }
     // I didn't add the others since you can't easily change size or color once you have shoes.
