@@ -29,7 +29,7 @@ class Shoes {
      * requires: nothing
      * effects: returns the size value of the Shoes object 
      */
-    private int getShoeSizeInCentemeters(){
+    public int getShoeSizeInCentemeters(){
         int shoeSize;
         shoeSize = this.sizeInCentemeters;  // this doesn't leak out a reference to the private varaible right?
         return shoeSize;
@@ -38,7 +38,7 @@ class Shoes {
     *  requires: nothing 
     *  effects: returns shoe objects color value
     */
-    private String getShoeColor(){
+    public String getShoeColor(){
         String color;
         color = this.shoeColor;
         return color;
@@ -48,7 +48,7 @@ class Shoes {
     *   effects: returns Shoes object is on or not on
     */
 
-    private boolean getShoesOn(){
+    public boolean getShoesOn(){
         boolean shoesAreOn;
         shoesAreOn = this.shoesOn;
         return shoesAreOn;
@@ -58,7 +58,7 @@ class Shoes {
      *  requires: nothing
      *  effects:  returns Shoes object tied or not tied
      */
-    private boolean getShoesTied(){
+    public boolean getShoesTied(){
         boolean shoesAreTied;
         shoesAreTied = this.shoesTied;
         return shoesAreTied;
@@ -67,14 +67,14 @@ class Shoes {
      *  requires: nothing
      *  effects:  set Shoes tied attribute to value t
      */
-    private void setShoesTied(boolean t){
+    public void setShoesTied(boolean t){
         this.shoesTied = t;
     }
     /** private void setShoesOn( boolean t)
      *  requires: nothing
      *  effects:  sets Shoes object on to value t
      */
-    private void setShoesOn( boolean t){
+    public void setShoesOn( boolean t){
         this.shoesOn = t;
     }
     // I didn't add the others since you can't easily change size or color once you have shoes.
