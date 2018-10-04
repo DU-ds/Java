@@ -13,18 +13,57 @@ class Shoes {
         shoeColor = "black";
         sizeInCentemeters = 25;
     }
-    public Shoes(int c, String s, boolean o, boolean t){
+    /** public Shoes(int c, String s, boolean o, boolean t)
+     *  requires: nothing
+     *  effects: created object of class Shoes with shoe.size() >= 0
+     */
+     public Shoes(int c, String s, boolean o, boolean t){
+        if (c >= 0) {
+           
+       
         this.sizeInCentemeters = c;
         this.shoeColor = s;
         this.shoesOn = o;
         this.shoesTied = t;
-    }
+        }
+        else{ // maybe define recurively?
+            this.sizeInCentemeters = -c;
+            this.shoeColor = s;
+            this.shoesOn = o;
+            this.shoesTied = t;
+       }  
+       }
+       /** public Shoes (int c, String s)
+        *  requires: nothing
+        *  effects: created object of class Shoes with shoe.size() >= 0
+        */
     public Shoes (int c, String s){
-        this.sizeInCentemeters = c;
-        this.shoeColor = s;
-        this.shoesOn = false;
-        this.shoesTied = false;
+        if (c >= 0) {
+            this.sizeInCentemeters = c;
+            this.shoeColor = s;
+            this.shoesOn = false;
+            this.shoesTied = false;
+        }
+        else {
+            this.sizeInCentemeters = -c;
+            this.shoeColor = s;
+            this.shoesOn = false;
+            this.shoesTied = false;
+        }
     }
+
+    // public Shoes(int c, String s, boolean o, boolean t){
+    //     this.sizeInCentemeters = c;
+    //     this.shoeColor = s;
+    //     this.shoesOn = o;
+    //     this.shoesTied = t;
+    // }
+    // public Shoes (int c, String s){
+    //     this.sizeInCentemeters = c;
+    //     this.shoeColor = s;
+    //     this.shoesOn = false;
+    //     this.shoesTied = false;
+    // }
     /** public int getShoeSizeInCentemeters()
      * requires: nothing
      * effects: returns the size value of the Shoes object 
@@ -34,7 +73,7 @@ class Shoes {
         shoeSize = this.sizeInCentemeters;  // this doesn't leak out a reference to the private varaible right?
         return shoeSize;
     }
-    /** private String getShoeColor()
+    /** public String getShoeColor()
     *  requires: nothing 
     *  effects: returns shoe objects color value
     */
@@ -43,7 +82,7 @@ class Shoes {
         color = this.shoeColor;
         return color;
     }
-    /** private boolean getShoesOn() 
+    /** public boolean getShoesOn() 
     *   requires: nothing
     *   effects: returns Shoes object is on or not on
     */
@@ -54,7 +93,7 @@ class Shoes {
         return shoesAreOn;
     }
 
-    /** private boolean getShoesTied()
+    /** public boolean getShoesTied()
      *  requires: nothing
      *  effects:  returns Shoes object tied or not tied
      */
@@ -63,14 +102,14 @@ class Shoes {
         shoesAreTied = this.shoesTied;
         return shoesAreTied;
     }
-    /** private void setShoesTied(boolean t)
+    /** public void setShoesTied(boolean t)
      *  requires: nothing
      *  effects:  set Shoes tied attribute to value t
      */
     public void setShoesTied(boolean t){
         this.shoesTied = t;
     }
-    /** private void setShoesOn( boolean t)
+    /** public void setShoesOn( boolean t)
      *  requires: nothing
      *  effects:  sets Shoes object on to value t
      */
