@@ -1,5 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-//objectPractice
+/**
+ *
+ * @author Kenneth Collins
+ */
+
 class Shoes {
 
     private int sizeInCentemeters;
@@ -17,7 +26,7 @@ class Shoes {
      *  requires: nothing
      *  effects: created object of class Shoes with shoe.size() >= 0
      */
-     public Shoes(int c, String s, boolean o, boolean t){
+    public Shoes(int c, String s, boolean o, boolean t){
         if (c >= 0) {
            
        
@@ -38,32 +47,19 @@ class Shoes {
         *  effects: created object of class Shoes with shoe.size() >= 0
         */
     public Shoes (int c, String s){
-        if (c >= 0) {
+        if (c >= 0){
             this.sizeInCentemeters = c;
             this.shoeColor = s;
             this.shoesOn = false;
             this.shoesTied = false;
         }
-        else {
+        else{
             this.sizeInCentemeters = -c;
             this.shoeColor = s;
             this.shoesOn = false;
             this.shoesTied = false;
         }
     }
-
-    // public Shoes(int c, String s, boolean o, boolean t){
-    //     this.sizeInCentemeters = c;
-    //     this.shoeColor = s;
-    //     this.shoesOn = o;
-    //     this.shoesTied = t;
-    // }
-    // public Shoes (int c, String s){
-    //     this.sizeInCentemeters = c;
-    //     this.shoeColor = s;
-    //     this.shoesOn = false;
-    //     this.shoesTied = false;
-    // }
     /** public int getShoeSizeInCentemeters()
      * requires: nothing
      * effects: returns the size value of the Shoes object 
@@ -73,7 +69,7 @@ class Shoes {
         shoeSize = this.sizeInCentemeters;  // this doesn't leak out a reference to the private varaible right?
         return shoeSize;
     }
-    /** public String getShoeColor()
+     /** private String getShoeColor()
     *  requires: nothing 
     *  effects: returns shoe objects color value
     */
@@ -82,18 +78,16 @@ class Shoes {
         color = this.shoeColor;
         return color;
     }
-    /** public boolean getShoesOn() 
+    /** private boolean getShoesOn() 
     *   requires: nothing
     *   effects: returns Shoes object is on or not on
     */
-
     public boolean getShoesOn(){
         boolean shoesAreOn;
         shoesAreOn = this.shoesOn;
         return shoesAreOn;
     }
-
-    /** public boolean getShoesTied()
+    /** private boolean getShoesTied()
      *  requires: nothing
      *  effects:  returns Shoes object tied or not tied
      */
@@ -102,21 +96,21 @@ class Shoes {
         shoesAreTied = this.shoesTied;
         return shoesAreTied;
     }
-    /** public void setShoesTied(boolean t)
+     /** private void setShoesTied(boolean t)
      *  requires: nothing
      *  effects:  set Shoes tied attribute to value t
      */
     public void setShoesTied(boolean t){
         this.shoesTied = t;
     }
-    /** public void setShoesOn( boolean t)
+    /** private void setShoesOn( boolean t)
      *  requires: nothing
      *  effects:  sets Shoes object on to value t
      */
     public void setShoesOn( boolean t){
         this.shoesOn = t;
     }
-    // I didn't add the others since you can't easily change size or color once you have shoes.
+// I didn't add the others since you can't easily change size or color once you have shoes.
 
     public static void main(String[] args) {
         Shoes shoe1 = new Shoes(30, "blue", true, true);
@@ -131,7 +125,4 @@ class Shoes {
         System.out.println(shoe2.getShoesOn());           //true       
         System.out.println(shoe2.getShoesTied());        //true 
     }
-
-
-
 }
