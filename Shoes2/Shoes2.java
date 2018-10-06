@@ -21,8 +21,14 @@ class Shoes2 {
         }
 
         public Shoes2Builder sizeInCentemeters (int sizeInCentemeters ) {
+            if ( sizeInCentemeters >= 0){
             this.sizeInCentemeters = sizeInCentemeters;
+            }
+            else{
+                this.sizeInCentemeters = - sizeInCentemeters;  // ensures shoe size >= 0
+            }
             return this;
+
         }
         public Shoes2Builder shoeColor ( String shoeColor){
             this.shoeColor = shoeColor;
