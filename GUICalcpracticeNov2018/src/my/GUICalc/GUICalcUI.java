@@ -7,7 +7,7 @@ package my.GUICalc;
 
 /**
  *
- * @author Kenneth Collins
+ * @author DU-ds
  */
 public class GUICalcUI extends javax.swing.JFrame {
 

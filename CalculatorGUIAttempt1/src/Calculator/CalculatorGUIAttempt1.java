@@ -7,7 +7,7 @@ package Calculator;
 
 /**
  *
- * @author Kenneth Collins
+ * @author DU-ds
  */
 public class CalculatorGUIAttempt1 extends javax.swing.JFrame {
 

@@ -1,7 +1,7 @@
 
 /**
  *
- * @author Kenneth Collins
+ * @author DU-ds
  */
 class Shoes2 {
 
