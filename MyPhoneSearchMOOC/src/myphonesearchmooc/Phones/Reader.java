@@ -5,13 +5,14 @@
  */
 package myphonesearchmooc.Phones;
 import java.util.Scanner;
+import java.util.List;
 /**
  *
  * @author DU-ds
  */
 public class Reader 
 {
-    Scanner scan;
+    private Scanner scan;
     
     
     public Reader(Scanner scan)
@@ -41,4 +42,19 @@ public class Reader
         }
         return intInput;
     }
+    
+    public String getFormattedStringFromStringList(List<String> list, String spaces)
+    {
+        StringBuilder buff = new StringBuilder(list.size() * 15);
+//initial capacity of 14 chars per string plus a new line char.
+        for(String str : list)
+        {
+            //String threespaces = "   "; //needed to conform to 3 spaces in example output
+            buff.append(spaces);
+            buff.append(str);
+            buff.append(System.lineSeparator()); //new line for each string
+        }
+        return buff.toString();
+    }
 }
+

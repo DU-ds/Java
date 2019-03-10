@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package myphonesearchmooc.Phones;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -11,16 +13,18 @@ package myphonesearchmooc.Phones;
  */
 public class Person 
 {
-    String name;
-    String number;
-    String city;
-    String street;
+    private String name;
+    //String number;
+    private List<String> number;
+    private String city;
+    private String street;
     
     
     public Person(String name, String number)
     {
         this.name = name;
-        this.number = number;
+        this.number = new ArrayList<String>();
+        this.number.add(number);
     }
     
     
@@ -29,7 +33,7 @@ public class Person
         return this.name;
     }
     
-    public String getNumber()
+    public List<String> getNumber()
     {
         return this.number;
     }
@@ -40,16 +44,29 @@ public class Person
         this.city = city;
     }
     
-    public String getStreet()
+    public String getStreet() throws Exception
     {
-        return this.street;
+        if(this.street != null)
+        {
+            return this.street;
+        }
+        throw new Exception();
     }
     
-    public String getCity()
+    public String getCity() throws Exception
     {
-        return this.city;
+        if(this.city != null)
+        {
+            return this.city;
+        }
+        throw new Exception();
     }
     
-    
+    public void addNumber(String number)  //assume it's only called on an instance of person w/a number already
+    {
+        
+        this.number.add(number);
+        
+    }
     
 }

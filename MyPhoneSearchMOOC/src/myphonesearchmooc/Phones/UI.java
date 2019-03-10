@@ -12,12 +12,12 @@ import java.util.Scanner;
  */
 public class UI 
 {
-    String input;
-    int intInput;
-    Scanner scan;
-    Reader read;
-    PhoneSearch catalog;
-    String introMsg = "phone search\n" +
+    private String input;
+    private int intInput;
+    private Scanner scan;
+    private Reader read;
+    private PhoneSearch catalog;
+    private String introMsg = "phone search\n" +
 "available operations:\n" +
 " 1 add a number\n" +
 " 2 search for a number\n" +
@@ -71,7 +71,7 @@ public class UI
                     String nameInput1 = read.getUserInput();
                     System.out.print("number: ");
                     String numberInput1 = read.getUserInput();
-                    catalog.addPerson(new Person(nameInput1, numberInput1));
+                    catalog.addANumber(nameInput1, numberInput1);
 //calls PhoneSearch method to add a Person
                     break;
                 
@@ -82,7 +82,8 @@ public class UI
                     try
                     {
                         Person person2 = catalog.getPersonByName(nameInput2);
-                        System.out.println(" " + person2.getNumber());
+                        String string2 = read.getFormattedStringFromStringList(person2.getNumber(), " ");
+                        System.out.println(  string2);
                     }
                     catch(Exception e)
                     {
@@ -151,8 +152,9 @@ public class UI
                     try
                     {
                         Person person5 = catalog.getPersonByName(nameInput5);
+                        String numbers5 = read.getFormattedStringFromStringList(person5.getNumber(), "   ");
                         System.out.println("  phone numbers:");
-                        System.out.println("   " + person5.getNumber());
+                        System.out.println( numbers5);
                     }
                     catch(Exception e)
                     {
@@ -162,7 +164,7 @@ public class UI
                     
                     
                 case 6:
-                    System.out.print("whose address: ");
+                    System.out.print("whose  information: ");
                     try
                     {
                         String nameInput6 = read.getUserInput();
@@ -180,4 +182,4 @@ public class UI
         
 //Do try catch blocks at the top to catch exceptions which will be thrown by the other classes methods
 
-    
+ 

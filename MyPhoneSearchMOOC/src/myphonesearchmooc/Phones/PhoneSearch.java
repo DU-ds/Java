@@ -13,10 +13,10 @@ import java.util.List;
  */
 public class PhoneSearch 
 {
-    Scanner scan;
-    List<Person> catalog;
-    Reader read;
-    String notFoundMsg = "  not found";
+    private Scanner scan;
+    private List<Person> catalog;
+    private Reader read;
+    //String notFoundMsg = "  not found";
     
     public PhoneSearch(Scanner scan)
     {
@@ -26,9 +26,26 @@ public class PhoneSearch
     }
     
     
-    public void addPerson(Person person)
+    public void addANumber(String name, String number)
     {
-        this.catalog.add(person);
+        boolean containsPerson = false;
+        for(Person p : this.catalog)
+        {
+            if(p.getName().equals(name))
+            {
+                p.addNumber(number);
+                containsPerson = true;
+            }
+        }
+        
+        if(containsPerson)
+        {//already done
+        }
+        else
+        {
+            Person person = new Person(name, number);
+            this.catalog.add(person);
+        }
     }
     
     public Person getPersonByName(String name) throws Exception
@@ -48,7 +65,7 @@ public class PhoneSearch
     {
         for (Person p : this.catalog)
         {
-            if(p.getNumber().equals(number))
+            if(p.getNumber().contains(number))
             {
                 return p;
             }
