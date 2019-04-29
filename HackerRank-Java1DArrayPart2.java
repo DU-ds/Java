@@ -26,6 +26,21 @@ public class Solution {
  */
 
 
+    public static boolean canWin(int leap, int[] game) {//special case of isSolveableFromIndex
+        return isSolveableFromIndex(leap, 0, game);
+    }
+
+    private static boolean isSolveableFromIndex(int leap, int index, int[] game){
+        //base case -- index >= array.length -- return true;
+        if(index >= game.length  ) return true;  // -1 ?
+        if(index < 0) return false;//so we don't call it on index out out bounds
+        if(game[index] != 0) return false; // cant move here
+
+        return  isSolveableFromIndex(leap, index + 1, game) ||
+                isSolveableFromIndex(leap, index - 1, game) || 
+                isSolveableFromIndex(leap, index + leap, game);
+    }
+
 
 /*
     public static boolean canWin(int leap, int[] game) { //use recursion to move along array
