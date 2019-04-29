@@ -27,7 +27,11 @@ public class Solution {
 
 
     public static boolean canWin(int leap, int[] game) {//special case of isSolveableFromIndex
-        return isSolveableFromIndex(leap, 0, game);
+        int n = game.length;
+        int[] game2 = new int[n];
+        System.arraycopy(game, 0, game2, 0, n); //copy b4 modify
+// https://stackoverflow.com/questions/5785745/make-copy-of-an-array
+        return isSolveableFromIndex(leap, 0, game2);
     }
 
     private static boolean isSolveableFromIndex(int leap, int index, int[] game){
@@ -35,6 +39,8 @@ public class Solution {
         if(index >= game.length  ) return true;  // -1 ?
         if(index < 0) return false;//so we don't call it on index out out bounds
         if(game[index] != 0) return false; // cant move here
+
+        game[index] = 2; //to prevent stackoverflowerror
 
         return  isSolveableFromIndex(leap, index + 1, game) ||
                 isSolveableFromIndex(leap, index - 1, game) || 
