@@ -26,6 +26,8 @@ public class Solution {
  */
 
 
+
+/*
     public static boolean canWin(int leap, int[] game) { //use recursion to move along array
         //base case -- index >= array.length -- return true;
         //move by one -- array[index + 1] = 0  -- index++;
@@ -38,7 +40,7 @@ public class Solution {
         int counterDontMoveBackThenForwardForever = 0; //
 
         while(counterDontMoveBackThenForwardForever <=  game.length ){//if moving back so much, it's an infinite loop of moving back then forward. 
-
+            game[i] = 1;//prevent infinite loop
             if ( i + leap >= game.length ){//base case
                 return true;
             }
