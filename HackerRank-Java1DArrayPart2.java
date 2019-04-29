@@ -26,7 +26,51 @@ public class Solution {
  */
 
 
+    public static boolean canWin(int leap, int[] game) { //use recursion to move along array
+        //base case -- index >= array.length -- return true;
+        //move by one -- array[index + 1] = 0  -- index++;
+        //move by leap -- array[index + leap] = 0 -- index += leap;
+        //move back one -- array[index - 1] == 0 -- index--;
+        //none of the above -- return false;
 
+        int i = 0;
+        boolean dontMoveBackThenForwardForever = true;
+        int counterDontMoveBackThenForwardForever = 0; //
+
+        while(counterDontMoveBackThenForwardForever <=  game.length ){//if moving back so much, it's an infinite loop of moving back then forward. 
+
+            if ( i + leap >= game.length ){//base case
+                return true;
+            }
+
+            else if ( game[ i + leap ] == 0 ){//move by leap
+                i += leap;
+                dontMoveBackThenForwardForever = true;
+                continue;
+            }
+
+            else if ( game[ i + 1 ] == 0 ){//&& dontMoveBackThenForwardForever){//move by one
+                i++;
+
+                continue;
+            }
+
+            else if ( i > 0 && game[ i - 1 ] == 0)//back by one
+            {
+                i--;
+                dontMoveBackThenForwardForever = false;
+                counterDontMoveBackThenForwardForever++;
+                continue;
+            }
+
+            else {//failed -- can't move forward
+                return false;
+            }
+        }
+
+        return false;// if the loop cant find an answer
+    }
+/*
     public static boolean canWin(int leap, int[] game) {
         int max = getMax(game);
         if(max > leap){
@@ -65,7 +109,7 @@ public class Solution {
         }
         return max;
     }
-
+*/
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int q = scan.nextInt();
