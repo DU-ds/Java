@@ -1,28 +1,98 @@
 
 import java.util.Map;
 import java.util.HashMap;
-
+// import java.security.MessageDigest;
+// import java.security.NoSuchAlgorithmException;
+// http://www.sha1-online.com/sha1-java/
 
 /*
 The Most Difficult Program to Compute? - Computerphile
 https://www.youtube.com/watch?v=i7sm9dzFtEI&t=8s
 */
 
-public Class Ackermann {
+public class Ackermann {
 
-public static void main(String[] args) {
-    AckermannNaive ack1 = new AckermannNaive();
-    try{
-        int a = ack1.calculate(2,3);
+    public static void main(String[] args) {
+        AckermannNaive ack1 = new AckermannNaive();
+        try{
+            int a = ack1.calculate(1,2);
+            System.out.println("Ack(1,2): " + ack1);
+        }
+//        catch(StackOverflowError err) {
+            catch(Exception e){
+            System.err.println("Error: " + e);
+        }
+    
+        AckermannNaive ack2 = new AckermannNaive();
+        try{
+            int a = ack2.calculate(2,2);
+            System.out.println("Ack(2,2): " + ack2);
+        }
+//        catch(StackOverflowError err) {
+            catch(Exception e){
+            System.err.println("Error: " + e);
+        }
+
+        AckermannNaive ack3 = new AckermannNaive();
+        try{
+            int a = ack3.calculate(2,3);
+            System.out.println("Ack(2,3): " + ack3);
+        }
+//        catch(StackOverflowError err) {
+            catch(Exception e){
+            System.err.println("Error: " + e);
+        }
+
+        AckermannNaive ack4 = new AckermannNaive();
+        try{
+            int a = ack4.calculate(3,3);
+            System.out.println("Ack(3,3): " + ack4);
+        }
+//        catch(StackOverflowError err) {
+            catch(Exception e){
+            System.err.println("Error: " + e);
+        }
+
+        Ackermann2 ack5 = new Ackermann2(1,2);
+        try {
+            ack5.calculate();
+            System.out.println("Ack2(1,2): " + ack5);
+        }
+        catch(Exception e) {
+            System.err.println("Exception: " + e);
+        }
+
+        Ackermann2 ack6 = new Ackermann2(2,2);
+        try {
+            ack5.calculate();
+            System.out.println("Ack2(2,2): " + ack6);
+        }
+        catch(Exception e) {
+            System.err.println("Exception: " + e);
+        }
+
+        Ackermann2 ack7 = new Ackermann2(2,3);
+        try {
+            ack5.calculate();
+            System.out.println("Ack2(2,3): " + ack7);
+        }
+        catch(Exception e) {
+            System.err.println("Exception: " + e);
+        }
+
+        Ackermann2 ack8 = new Ackermann2(3,3);
+        try {
+            ack5.calculate();
+            System.out.println("Ack2(3,3): " + ack8);
+        }
+        catch(Exception e) {
+            System.err.println("Exception: " + e);
+        }
     }
-    catch(StackOverflowError err) {
-        System.err.println("Error: " + err);
-    }
+
 }
 
-}cd 
-
-public Class AckermannNaive{
+class AckermannNaive{
     private int m, n;
 
 
@@ -32,7 +102,7 @@ public Class AckermannNaive{
     }
 
 
-    public int calculate(int m, int n){
+    public int calculate(int m, int n) throws IllegalAccessException{
         if(m == 0){
             return n + 1;
         }
@@ -40,28 +110,36 @@ public Class AckermannNaive{
             return(this.calculate(m - 1, 1));
         }
         else if (m > 0 && n > 0){
-            return(this.calculate(m-1, this.calculate(m, n-1)))
+            return(this.calculate(m-1, this.calculate(m, n-1)));
         }
+        throw new IllegalArgumentException();
     }
 }
 
 
-public Class Ackermann2{
+class Ackermann2{
 // need to implement equals and hashCode to use HashMap.contains() 
 // hashCode to make hashes unique(ish) and equals to make contains() work
     private int m, n;
-    private static Map<Integer,Integer> map; //shared field
+    private static Map<String, Integer> map; //shared field
 
 
     Ackermann2(int m, int n){
         this.m = m;
         this.n = n;
         if(map == null){
-            map = new HashMap<String, Integer>() // String key = m + " " + n
+            map = new HashMap<String, Integer>(); // String key = m + " " + n
         }
+
     }
 
+    @Override
+    public int hashCode(){
+        String s = m + " " + n;
+        return s.hashCode();
+    }
 
+    @Override
     public boolean equals(Object object){
         if(object == null || object.getClass() != this.getClass()){
             return false;
@@ -69,7 +147,7 @@ public Class Ackermann2{
 
         Ackermann2 obj = (Ackermann2) object;
 
-        else if(this.m != obj.getM() || this.n != obj.getN){
+        if(this.m != obj.getM() || this.n != obj.getN()){
             return false;
         }
 
@@ -79,31 +157,47 @@ public Class Ackermann2{
 
 
     public int getM(){
-        Integer l = new Integer(m);
-        return l;
+        return m;
     }
 
 
     public int getN(){
-        Integer l = new Integer(n);
-        return l;
+        return n;
     }
 
-    public int calculate(){
-        if()
+    public int calculate() throws IllegalArgumentException{
+        String s = m + " " + n;
+        if(this.map.containsKey(s)){
+            return map.get(s);
+        }
+
+        int ans;//just so it's initialized
+
+        if(m == 0){
+            ans = n + 1;
+        }
+
+        else if(m > 0 && n == 0 ) {
+            Ackermann2 ack = new Ackermann2(m-1, 1);
+            ans = ack.calculate();
+        }
+
+        else if (m > 0 && n > 0){
+            Ackermann2 a = new Ackermann2(m, n-1);
+            int b = a.calculate();
+            Ackermann2 ack = new Ackermann2(m-1, b);
+            ans = ack.calculate();
+        }
+        else {
+            throw new IllegalArgumentException();
+        }
 
 
-        // if(m == 0){
-        //     return n + 1;
-        // }
-        // else if(m > 0 && n == 0 ) {
-        //     return(this.calculate(m - 1, 1));
-        // }
-        // else if (m > 0 && n > 0){
-        //     return(this.calculate(m-1, this.calculate(m, n-1)))
-        // }
+        map.put(s, ans);
+
+        return ans;
+
     }
 }
 
 
-// Need to 
