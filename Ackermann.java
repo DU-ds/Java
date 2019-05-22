@@ -16,7 +16,7 @@ public class Ackermann {
         AckermannNaive ack1 = new AckermannNaive();
         try{
             int a = ack1.calculate(1,2);
-            System.out.println("Ack(1,2): " + ack1);
+            System.out.println("Ack(1,2): " + a);
         }
 //        catch(StackOverflowError err) {
             catch(Exception e){
@@ -26,7 +26,7 @@ public class Ackermann {
         AckermannNaive ack2 = new AckermannNaive();
         try{
             int a = ack2.calculate(2,2);
-            System.out.println("Ack(2,2): " + ack2);
+            System.out.println("Ack(2,2): " + a);
         }
 //        catch(StackOverflowError err) {
             catch(Exception e){
@@ -36,7 +36,7 @@ public class Ackermann {
         AckermannNaive ack3 = new AckermannNaive();
         try{
             int a = ack3.calculate(2,3);
-            System.out.println("Ack(2,3): " + ack3);
+            System.out.println("Ack(2,3): " + a);
         }
 //        catch(StackOverflowError err) {
             catch(Exception e){
@@ -46,7 +46,7 @@ public class Ackermann {
         AckermannNaive ack4 = new AckermannNaive();
         try{
             int a = ack4.calculate(3,3);
-            System.out.println("Ack(3,3): " + ack4);
+            System.out.println("Ack(3,3): " + a);
         }
 //        catch(StackOverflowError err) {
             catch(Exception e){
@@ -55,8 +55,8 @@ public class Ackermann {
 
         Ackermann2 ack5 = new Ackermann2(1,2);
         try {
-            ack5.calculate();
-            System.out.println("Ack2(1,2): " + ack5);
+            int a = ack5.calculate();
+            System.out.println("Ack2(1,2): " + a);
         }
         catch(Exception e) {
             System.err.println("Exception: " + e);
@@ -64,8 +64,8 @@ public class Ackermann {
 
         Ackermann2 ack6 = new Ackermann2(2,2);
         try {
-            ack5.calculate();
-            System.out.println("Ack2(2,2): " + ack6);
+            int a = ack6.calculate();
+            System.out.println("Ack2(2,2): " + a);
         }
         catch(Exception e) {
             System.err.println("Exception: " + e);
@@ -73,8 +73,8 @@ public class Ackermann {
 
         Ackermann2 ack7 = new Ackermann2(2,3);
         try {
-            ack5.calculate();
-            System.out.println("Ack2(2,3): " + ack7);
+            int a = ack7.calculate();
+            System.out.println("Ack2(2,3): " + a);
         }
         catch(Exception e) {
             System.err.println("Exception: " + e);
@@ -82,7 +82,7 @@ public class Ackermann {
 
         Ackermann2 ack8 = new Ackermann2(3,3);
         try {
-            ack5.calculate();
+            int a = ack8.calculate();
             System.out.println("Ack2(3,3): " + ack8);
         }
         catch(Exception e) {
