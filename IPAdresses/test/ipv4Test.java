@@ -69,7 +69,7 @@ public class ipv4Test {
     * addr.length <= 4
     */
     @Test
-    public void testIsValidIpv4_len1() {
+    public void testIsValidIpv4_len5() {
         System.out.println("isValidIpv4");
         String localHost = "127:0:0:1:102";
         ipv4 ip = new ipv4();
@@ -82,7 +82,7 @@ public class ipv4Test {
     * addr.length = 1
     */
     @Test
-    public void testIsValidIpv4_len2() {
+    public void testIsValidIpv4_len1() {
         System.out.println("isValidIpv4");
         String localHost = "127";
         ipv4 ip = new ipv4();
@@ -95,7 +95,7 @@ public class ipv4Test {
     * addr.length = 2
     */
     @Test
-    public void testIsValidIpv4_len3() {
+    public void testIsValidIpv4_len2() {
         System.out.println("isValidIpv4");
         String localHost = "127:0";
         ipv4 ip = new ipv4();
@@ -108,7 +108,7 @@ public class ipv4Test {
     * addr.length = 3
     */
     @Test
-    public void testIsValidIpv4_colon() {
+    public void testIsValidIpv4_len3() {
         System.out.println("isValidIpv4");
         String localHost = "127:0:7";
         ipv4 ip = new ipv4();
@@ -536,7 +536,7 @@ public class ipv4Test {
      */
     
     @Test
-    public void testIsPublicIp_String192.0.0_1() {
+    public void testIsPublicIp_String192_0_0_1() {
         System.out.println("isPublicIp");
         String addr = "0.255.255.255";
         ipv4 instance = new ipv4();
@@ -549,7 +549,7 @@ public class ipv4Test {
      */
     
         @Test
-    public void testIsPublicIp_String192.0.0_2() {
+    public void testIsPublicIp_String192_0_0_2() {
         System.out.println("isPublicIp");
         String addr = "1.0.0.0";
         ipv4 instance = new ipv4();
@@ -562,7 +562,7 @@ public class ipv4Test {
      */
     
     @Test
-    public void testIsPublicIp_String192.0.0_3() {
+    public void testIsPublicIp_String192_0_0_3() {
         System.out.println("isPublicIp");
         String addr = "0.255.255.255";
         ipv4 instance = new ipv4();
@@ -575,7 +575,7 @@ public class ipv4Test {
      */
     
         @Test
-    public void testIsPublicIp_String192.0.0_4() {
+    public void testIsPublicIp_String192_0_0_4() {
         System.out.println("isPublicIp");
         String addr = "1.0.0.0";
         ipv4 instance = new ipv4();
@@ -588,7 +588,7 @@ public class ipv4Test {
      */
     
     @Test
-    public void testIsPublicIp_String192.0.2_1() {
+    public void testIsPublicIp_String192_0_2_1() {
         System.out.println("isPublicIp");
         String addr = "0.255.255.255";
         ipv4 instance = new ipv4();
@@ -601,7 +601,7 @@ public class ipv4Test {
      */
     
         @Test
-    public void testIsPublicIp_String192.0.2_2() {
+    public void testIsPublicIp_String192_0_2_2() {
         System.out.println("isPublicIp");
         String addr = "1.0.0.0";
         ipv4 instance = new ipv4();
@@ -614,7 +614,7 @@ public class ipv4Test {
      */
     
     @Test
-    public void testIsPublicIp_String192.0.2_3() {
+    public void testIsPublicIp_String192_0_2_3() {
         System.out.println("isPublicIp");
         String addr = "0.255.255.255";
         ipv4 instance = new ipv4();
@@ -627,7 +627,7 @@ public class ipv4Test {
      */
     
         @Test
-    public void testIsPublicIp_String192.0.2_4() {
+    public void testIsPublicIp_String192_0_2_4() {
         System.out.println("isPublicIp");
         String addr = "1.0.0.0";
         ipv4 instance = new ipv4();
@@ -640,7 +640,7 @@ public class ipv4Test {
      */
     
     @Test
-    public void testIsPublicIp_String192.88_1() {
+    public void testIsPublicIp_String192_88_1() {
         System.out.println("isPublicIp");
         String addr = "0.255.255.255";
         ipv4 instance = new ipv4();
@@ -653,7 +653,7 @@ public class ipv4Test {
      */
     
         @Test
-    public void testIsPublicIp_String192.88_2() {
+    public void testIsPublicIp_String192_88_2() {
         System.out.println("isPublicIp");
         String addr = "1.0.0.0";
         ipv4 instance = new ipv4();
@@ -666,7 +666,7 @@ public class ipv4Test {
      */
     
     @Test
-    public void testIsPublicIp_String192.88_3() {
+    public void testIsPublicIp_String192_88_3() {
         System.out.println("isPublicIp");
         String addr = "0.255.255.255";
         ipv4 instance = new ipv4();
@@ -679,7 +679,7 @@ public class ipv4Test {
      */
     
         @Test
-    public void testIsPublicIp_String192.88_4() {
+    public void testIsPublicIp_String192_88_4() {
         System.out.println("isPublicIp");
         String addr = "1.0.0.0";
         ipv4 instance = new ipv4();
@@ -693,7 +693,7 @@ public class ipv4Test {
      */
     
     @Test
-    public void testIsPublicIp_String192.168_1() {
+    public void testIsPublicIp_String192_168_1() {
         System.out.println("isPublicIp");
         String addr = "0.255.255.255";
         ipv4 instance = new ipv4();
@@ -706,7 +706,7 @@ public class ipv4Test {
      */
     
         @Test
-    public void testIsPublicIp_String192.168_2() {
+    public void testIsPublicIp_String192_168_2() {
         System.out.println("isPublicIp");
         String addr = "1.0.0.0";
         ipv4 instance = new ipv4();
@@ -719,7 +719,7 @@ public class ipv4Test {
      */
     
     @Test
-    public void testIsPublicIp_String192.168_3() {
+    public void testIsPublicIp_String192_168_3() {
         System.out.println("isPublicIp");
         String addr = "0.255.255.255";
         ipv4 instance = new ipv4();
@@ -732,7 +732,7 @@ public class ipv4Test {
      */
     
         @Test
-    public void testIsPublicIp_String192.168_4() {
+    public void testIsPublicIp_String192_168_4() {
         System.out.println("isPublicIp");
         String addr = "1.0.0.0";
         ipv4 instance = new ipv4();
@@ -745,7 +745,7 @@ public class ipv4Test {
      */
     
     @Test
-    public void testIsPublicIp_String198.18_1() {
+    public void testIsPublicIp_String198_18_1() {
         System.out.println("isPublicIp");
         String addr = "0.255.255.255";
         ipv4 instance = new ipv4();
@@ -758,7 +758,7 @@ public class ipv4Test {
      */
     
         @Test
-    public void testIsPublicIp_String198.18_2() {
+    public void testIsPublicIp_String198_18_2() {
         System.out.println("isPublicIp");
         String addr = "1.0.0.0";
         ipv4 instance = new ipv4();
@@ -771,7 +771,7 @@ public class ipv4Test {
      */
     
     @Test
-    public void testIsPublicIp_String198.18_3() {
+    public void testIsPublicIp_String198_18_3() {
         System.out.println("isPublicIp");
         String addr = "0.255.255.255";
         ipv4 instance = new ipv4();
@@ -784,7 +784,7 @@ public class ipv4Test {
      */
     
         @Test
-    public void testIsPublicIp_String198.18_4() {
+    public void testIsPublicIp_String198_18_4() {
         System.out.println("isPublicIp");
         String addr = "1.0.0.0";
         ipv4 instance = new ipv4();
@@ -798,7 +798,7 @@ public class ipv4Test {
      */
     
     @Test
-    public void testIsPublicIp_String198.51_1() {
+    public void testIsPublicIp_String198_51_1() {
         System.out.println("isPublicIp");
         String addr = "0.255.255.255";
         ipv4 instance = new ipv4();
@@ -811,7 +811,7 @@ public class ipv4Test {
      */
     
         @Test
-    public void testIsPublicIp_String198.51_2() {
+    public void testIsPublicIp_String198_51_2() {
         System.out.println("isPublicIp");
         String addr = "1.0.0.0";
         ipv4 instance = new ipv4();
@@ -824,7 +824,7 @@ public class ipv4Test {
      */
     
     @Test
-    public void testIsPublicIp_String198.51_3() {
+    public void testIsPublicIp_String198_51_3() {
         System.out.println("isPublicIp");
         String addr = "0.255.255.255";
         ipv4 instance = new ipv4();
@@ -837,7 +837,7 @@ public class ipv4Test {
      */
     
         @Test
-    public void testIsPublicIp_String198.51_4() {
+    public void testIsPublicIp_String198_51_4() {
         System.out.println("isPublicIp");
         String addr = "1.0.0.0";
         ipv4 instance = new ipv4();
