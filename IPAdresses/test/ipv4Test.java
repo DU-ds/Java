@@ -263,6 +263,8 @@ public class ipv4Test {
      * 
      * https://en.wikipedia.org/wiki/IPv4#Special-use_addresses
      * 
+     * Better resource:
+     * https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml
      * 
 0.0.0.0/8 	0.0.0.0–0.255.255.255 
 10.0.0.0/8 	10.0.0.0–10.255.255.255 	
