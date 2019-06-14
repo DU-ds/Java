@@ -969,6 +969,10 @@ public class ipv4Test {
    
     /**
      * covers 224.0.0.0/4 
+     * 
+     * also
+     * 
+     * covers 240.0.0.0/4 
      */
     
     @Test
@@ -982,6 +986,10 @@ public class ipv4Test {
 
     /**
      * covers 224.0.0.0/4 
+     * 
+     * also
+     * 
+     * covers 240.0.0.0/4 
      */
     
         @Test
@@ -990,59 +998,24 @@ public class ipv4Test {
         String addr = "240.0.0.0";
         ipv4 instance = new ipv4();
         boolean result = instance.isPublicIp(addr);
-        assertTrue(result);
+        assertFalse(result);
     }
    
     /**
-     * covers 240.0.0.0/4 
+     * covers 240.0.0.0/4
+     * 
+     * also
+     * 
+     * covers 255.255.255.255/32  
      */
     
     @Test
     public void testIsPublicIp_String240_1() {
         System.out.println("isPublicIp");
-        String addr = "0.255.255.255";
-        ipv4 instance = new ipv4();
-        boolean result = instance.isPublicIp(addr);
-        assertTrue(result);
-    }
-
-    /**
-     * covers 240.0.0.0/4 
-     */
-    
-        @Test
-    public void testIsPublicIp_String240_2() {
-        System.out.println("isPublicIp");
-        String addr = "1.0.0.0";
+        String addr = "255.255.255.254";
         ipv4 instance = new ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
-    }
-   
-    /**
-     * covers 240.0.0.0/4 
-     */
-    
-    @Test
-    public void testIsPublicIp_String240_3() {
-        System.out.println("isPublicIp");
-        String addr = "0.255.255.255";
-        ipv4 instance = new ipv4();
-        boolean result = instance.isPublicIp(addr);
-        assertFalse(result);
-    }
-
-    /**
-     * covers 240.0.0.0/4 
-     */
-    
-        @Test
-    public void testIsPublicIp_String240_4() {
-        System.out.println("isPublicIp");
-        String addr = "1.0.0.0";
-        ipv4 instance = new ipv4();
-        boolean result = instance.isPublicIp(addr);
-        assertTrue(result);
     }
     
        
@@ -1053,28 +1026,12 @@ public class ipv4Test {
     @Test
     public void testIsPublicIp_String255_1() {
         System.out.println("isPublicIp");
-        String addr = "0.255.255.254";
-        ipv4 instance = new ipv4();
-        boolean result = instance.isPublicIp(addr);
-        assertTrue(result);
-    }
-
-        /**
-     * covers 255.255.255.255/32 
-     */
-    
-    @Test
-    public void testIsPublicIp_String255_2() {
-        System.out.println("isPublicIp");
-        String addr = "0.255.255.255";
+        String addr = "255.255.255.255";
         ipv4 instance = new ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
-
-
     
-
     
     /**
      * Test of stringToIpv4 method, of class ipv4.
