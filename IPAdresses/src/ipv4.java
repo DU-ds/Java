@@ -10,9 +10,9 @@ import java.lang.SecurityException;
  *
  * @author DU-ds
  */
-public class ipv4 {
+public class Ipv4 {
     
-    public ipv4(){
+    public Ipv4(){
         
     }
     
@@ -35,11 +35,15 @@ public class ipv4 {
      */
     
     public boolean isCIDR(String addr){
+        String[] tmp = addr.split("[/]");
+        if(tmp.length == 2){
+            return true;
+        }
         return false;
     }
     
     
-    /**public byte[] ipSplit(String addr)
+    /**public byte[] ipSplit(String addr) 
      * 
      * @param addr : string of 1-4 "." or ":" delimitated bytes, possibly with extra CIDR info
      * @return : up to four bytes from addr; 
@@ -47,7 +51,27 @@ public class ipv4 {
      * ignores CIDR notation or adds an extra byte for CIDR???
      */
     public byte[] ipSplit(String addr){
-        return new byte[3];
+//        return new byte[3];
+        
+        if(isCIDR(addr)){//remove cidr component if it exists
+            String[] tmp = addr.split("[/]");
+            String cidr = tmp[1];
+            addr = tmp[0];
+        }
+        
+        byte arr[] = new byte[4];
+        String[] split;
+        split = addr.split("[.:]");
+        
+        for(int i = 0; i < split.length; i++){
+            arr[i] = Byte.parseByte(split[i]);
+        }
+/*
+    https://stackoverflow.com/questions/106179/regular-expression-to-match-dns-hostname-or-ip-address
+    https://www.regular-expressions.info/
+*/
+        
+        return arr;
     }
     
     /**
@@ -65,7 +89,17 @@ public class ipv4 {
      * @return : true iff addr is a public (not private / local / etc) IPv4 address
      */
     public boolean isPublicIp(Inet4Address addr){
-        return false;
+        return ! (
+                addr.isAnyLocalAddress()  ||
+                addr.isLinkLocalAddress() ||
+                addr.isLoopbackAddress()  ||
+                addr.isMCLinkLocal()      ||
+                addr.isMCNodeLocal()      ||
+                addr.isMCOrgLocal()       ||
+                addr.isMCSiteLocal()      ||
+                addr.isSiteLocalAddress()
+        );
+        //https://codereview.stackexchange.com/questions/65071/test-if-given-ip-is-a-public-one
     }
 
     /** public boolean isPublicIp(String addr)
@@ -74,7 +108,17 @@ public class ipv4 {
      * @return : true iff addr is a public (not private / local) IPv4 address
      */
     public boolean isPublicIp(String addr){
-        return false;
+        Inet4Address ad;
+        
+        try{
+            ad = (Inet4Address) InetAddress.getByName(addr);
+        }
+        catch(UnknownHostException e){
+//            e.printStackTrace();
+            return false;
+        }
+        
+        return this.isPublicIp(ad);
     }
     
     public Inet4Address stringToIpv4(String addr) throws Exception {

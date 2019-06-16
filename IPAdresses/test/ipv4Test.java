@@ -14,9 +14,9 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author DU-ds
  */
-public class ipv4Test {
+public class Ipv4Test {
     
-    public ipv4Test() {
+    public Ipv4Test() {
     }
 
 //    @BeforeAll
@@ -36,7 +36,7 @@ public class ipv4Test {
     public void testIsValidIpv4_dot() {
         System.out.println("isValidIpv4");
         String localHost = "127.0.0.1";
-        ipv4 ip = new ipv4();
+        Ipv4 ip = new Ipv4();
         boolean expResult = true;
         boolean result = ip.isValidIpv4(localHost);
         assertTrue( result);
@@ -49,7 +49,7 @@ public class ipv4Test {
     public void testIsValidIpv4_colon() {
         System.out.println("isValidIpv4");
         String localHost = "127:0:0:1";
-        ipv4 ip = new ipv4();
+        Ipv4 ip = new Ipv4();
         boolean expResult = true;
         boolean result = ip.isValidIpv4(localHost);
         assertTrue(result);
@@ -61,7 +61,7 @@ public class ipv4Test {
     public void testIsValidIpv4_len0() {
         System.out.println("isValidIpv4");
         String emptyHost = "";
-        ipv4 ip = new ipv4();
+        Ipv4 ip = new Ipv4();
         boolean result = ip.isValidIpv4(emptyHost);
         assertFalse(result);
     }
@@ -72,7 +72,7 @@ public class ipv4Test {
     public void testIsValidIpv4_len5() {
         System.out.println("isValidIpv4");
         String localHost = "127:0:0:1:102";
-        ipv4 ip = new ipv4();
+        Ipv4 ip = new Ipv4();
         boolean expResult = true;
         boolean result = ip.isValidIpv4(localHost);
         assertFalse(result);
@@ -85,7 +85,7 @@ public class ipv4Test {
     public void testIsValidIpv4_len1() {
         System.out.println("isValidIpv4");
         String localHost = "127";
-        ipv4 ip = new ipv4();
+        Ipv4 ip = new Ipv4();
         boolean expResult = true;
         boolean result = ip.isValidIpv4(localHost);
         assertTrue(result);
@@ -98,7 +98,7 @@ public class ipv4Test {
     public void testIsValidIpv4_len2() {
         System.out.println("isValidIpv4");
         String localHost = "127:0";
-        ipv4 ip = new ipv4();
+        Ipv4 ip = new Ipv4();
         boolean expResult = true;
         boolean result = ip.isValidIpv4(localHost);
         assertTrue(result);
@@ -111,7 +111,7 @@ public class ipv4Test {
     public void testIsValidIpv4_len3() {
         System.out.println("isValidIpv4");
         String localHost = "127:0:7";
-        ipv4 ip = new ipv4();
+        Ipv4 ip = new Ipv4();
         boolean expResult = true;
         boolean result = ip.isValidIpv4(localHost);
         assertTrue(result);
@@ -124,7 +124,7 @@ public class ipv4Test {
     public void testIsValidIpv4_invalid() {
         System.out.println("isValidIpv4");
         String localHost = "string.124.0.1";
-        ipv4 ip = new ipv4();
+        Ipv4 ip = new Ipv4();
         boolean expResult = true;
         boolean result = ip.isValidIpv4(localHost);
         assertTrue(result);
@@ -136,7 +136,7 @@ public class ipv4Test {
     public void testIsValidIpv4_CIDR() {
         System.out.println("isValidIpv4");
         String localHost = "200.0.0.0/8";
-        ipv4 ip = new ipv4();
+        Ipv4 ip = new Ipv4();
         boolean expResult = true;
         boolean result = ip.isValidIpv4(localHost);
         assertTrue(result);
@@ -146,7 +146,7 @@ public class ipv4Test {
     public void testIsValidIpv4_trailing1() {
         System.out.println("isValidIpv4");
         String localHost = "200.";
-        ipv4 ip = new ipv4();
+        Ipv4 ip = new Ipv4();
         boolean expResult = true;
         boolean result = ip.isValidIpv4(localHost);
         assertTrue(result);
@@ -157,7 +157,7 @@ public class ipv4Test {
     public void testIsValidIpv4_trailing2() {
         System.out.println("isValidIpv4");
         String localHost = "200.54.";
-        ipv4 ip = new ipv4();
+        Ipv4 ip = new Ipv4();
         boolean expResult = true;
         boolean result = ip.isValidIpv4(localHost);
         assertTrue(result);
@@ -167,17 +167,18 @@ public class ipv4Test {
     public void testIsValidIpv4_trailing3() {
         System.out.println("isValidIpv4");
         String localHost = "200.87.14.";
-        ipv4 ip = new ipv4();
+        Ipv4 ip = new Ipv4();
         boolean expResult = true;
         boolean result = ip.isValidIpv4(localHost);
         assertTrue(result);
     }
 
+    
     @Test
     public void testIsValidIpv4_trailing4() {
         System.out.println("isValidIpv4");
         String localHost = "212.12.98.69/";
-        ipv4 ip = new ipv4();
+        Ipv4 ip = new Ipv4();
         boolean expResult = true;
         boolean result = ip.isValidIpv4(localHost);
         assertTrue(result);
@@ -232,13 +233,13 @@ public class ipv4Test {
 
 
     /**
-     * Test of isPublicIp method, of class ipv4.
+     * Test of isPublicIp method, of class Ipv4.
      */
     @Test
     public void testIsPublicIp_Inet4Address() {
         System.out.println("isPublicIp");
         Inet4Address addr = null;
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean expResult = false;
         boolean result = instance.isPublicIp(addr);
         assertEquals(expResult, result);
@@ -247,7 +248,7 @@ public class ipv4Test {
     }
 
     /**
-     * Test of isPublicIp method, of class ipv4.
+     * Test of isPublicIp method, of class Ipv4.
      */
     
     /**
@@ -297,7 +298,7 @@ public class ipv4Test {
     public void testIsPublicIp_String0_1() {
         System.out.println("isPublicIp");
         String addr = "0.255.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -310,7 +311,7 @@ public class ipv4Test {
     public void testIsPublicIp_String0_2() {
         System.out.println("isPublicIp");
         String addr = "1.0.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -323,7 +324,7 @@ public class ipv4Test {
     public void testIsPublicIp_String10_1() {
         System.out.println("isPublicIp");
         String addr = "9.255.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -336,7 +337,7 @@ public class ipv4Test {
     public void testIsPublicIp_String10_2() {
         System.out.println("isPublicIp");
         String addr = "10.0.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -349,7 +350,7 @@ public class ipv4Test {
     public void testIsPublicIp_String10_3() {
         System.out.println("isPublicIp");
         String addr = "10.255.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -362,7 +363,7 @@ public class ipv4Test {
     public void testIsPublicIp_String10_4() {
         System.out.println("isPublicIp");
         String addr = "11.0.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -375,7 +376,7 @@ public class ipv4Test {
     public void testIsPublicIp_String100_1() {
         System.out.println("isPublicIp");
         String addr = "100.63.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -388,7 +389,7 @@ public class ipv4Test {
     public void testIsPublicIp_String100_2() {
         System.out.println("isPublicIp");
         String addr = "100.64.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -401,7 +402,7 @@ public class ipv4Test {
     public void testIsPublicIp_String100_3() {
         System.out.println("isPublicIp");
         String addr = "100.126.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -414,7 +415,7 @@ public class ipv4Test {
     public void testIsPublicIp_String100_4() {
         System.out.println("isPublicIp");
         String addr = "100.127.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -427,7 +428,7 @@ public class ipv4Test {
     public void testIsPublicIp_String127_1() {
         System.out.println("isPublicIp");
         String addr = "126.255.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -440,7 +441,7 @@ public class ipv4Test {
     public void testIsPublicIp_String127_2() {
         System.out.println("isPublicIp");
         String addr = "127.0.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -453,7 +454,7 @@ public class ipv4Test {
     public void testIsPublicIp_String127_3() {
         System.out.println("isPublicIp");
         String addr = "127.255.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -466,7 +467,7 @@ public class ipv4Test {
     public void testIsPublicIp_String127_4() {
         System.out.println("isPublicIp");
         String addr = "128.0.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -479,7 +480,7 @@ public class ipv4Test {
     public void testIsPublicIp_String169_1() {
         System.out.println("isPublicIp");
         String addr = "169.253.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -492,7 +493,7 @@ public class ipv4Test {
     public void testIsPublicIp_String169_2() {
         System.out.println("isPublicIp");
         String addr = "169.254.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -505,7 +506,7 @@ public class ipv4Test {
     public void testIsPublicIp_String169_3() {
         System.out.println("isPublicIp");
         String addr = "169.254.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -518,7 +519,7 @@ public class ipv4Test {
     public void testIsPublicIp_String169_4() {
         System.out.println("isPublicIp");
         String addr = "169.255.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -531,7 +532,7 @@ public class ipv4Test {
     public void testIsPublicIp_String172_1() {
         System.out.println("isPublicIp");
         String addr = "172.15.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -544,7 +545,7 @@ public class ipv4Test {
     public void testIsPublicIp_String172_2() {
         System.out.println("isPublicIp");
         String addr = "172.16.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -557,7 +558,7 @@ public class ipv4Test {
     public void testIsPublicIp_String172_3() {
         System.out.println("isPublicIp");
         String addr = "172.31.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -570,7 +571,7 @@ public class ipv4Test {
     public void testIsPublicIp_String172_4() {
         System.out.println("isPublicIp");
         String addr = "172.32.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -583,7 +584,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_0_0_1() {
         System.out.println("isPublicIp");
         String addr = "191.255.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -596,7 +597,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_0_0_2() {
         System.out.println("isPublicIp");
         String addr = "192.0.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -609,7 +610,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_0_0_3() {
         System.out.println("isPublicIp");
         String addr = "192.0.0.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -622,7 +623,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_0_0_4() {
         System.out.println("isPublicIp");
         String addr = "192.0.1.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -635,7 +636,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_0_2_1() {
         System.out.println("isPublicIp");
         String addr = "192.0.1.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -648,7 +649,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_0_2_2() {
         System.out.println("isPublicIp");
         String addr = "192.0.2.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -661,7 +662,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_0_2_3() {
         System.out.println("isPublicIp");
         String addr = "192.0.2.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -674,7 +675,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_0_2_4() {
         System.out.println("isPublicIp");
         String addr = "192.0.3.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -687,7 +688,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_88_1() {
         System.out.println("isPublicIp");
         String addr = "192.88.98.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -700,7 +701,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_88_2() {
         System.out.println("isPublicIp");
         String addr = "192.88.99.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -713,7 +714,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_88_3() {
         System.out.println("isPublicIp");
         String addr = "192.88.99.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -726,7 +727,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_88_4() {
         System.out.println("isPublicIp");
         String addr = "192.88.100.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -740,7 +741,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_168_1() {
         System.out.println("isPublicIp");
         String addr = "192.167.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -753,7 +754,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_168_2() {
         System.out.println("isPublicIp");
         String addr = "192.168.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -766,7 +767,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_168_3() {
         System.out.println("isPublicIp");
         String addr = "192.168.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -779,7 +780,7 @@ public class ipv4Test {
     public void testIsPublicIp_String192_168_4() {
         System.out.println("isPublicIp");
         String addr = "192.169.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -792,7 +793,7 @@ public class ipv4Test {
     public void testIsPublicIp_String198_18_1() {
         System.out.println("isPublicIp");
         String addr = "198.17.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -805,7 +806,7 @@ public class ipv4Test {
     public void testIsPublicIp_String198_18_2() {
         System.out.println("isPublicIp");
         String addr = "198.18.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -818,7 +819,7 @@ public class ipv4Test {
     public void testIsPublicIp_String198_18_3() {
         System.out.println("isPublicIp");
         String addr = "198.19.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -831,7 +832,7 @@ public class ipv4Test {
     public void testIsPublicIp_String198_18_4() {
         System.out.println("isPublicIp");
         String addr = "198.20.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -845,7 +846,7 @@ public class ipv4Test {
     public void testIsPublicIp_String198_51_1() {
         System.out.println("isPublicIp");
         String addr = "198.51.99.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -858,7 +859,7 @@ public class ipv4Test {
     public void testIsPublicIp_String198_51_2() {
         System.out.println("isPublicIp");
         String addr = "198.51.100.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -871,7 +872,7 @@ public class ipv4Test {
     public void testIsPublicIp_String198_51_3() {
         System.out.println("isPublicIp");
         String addr = "198.51.100.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -884,7 +885,7 @@ public class ipv4Test {
     public void testIsPublicIp_String198_51_4() {
         System.out.println("isPublicIp");
         String addr = "198.51.101.000";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -897,7 +898,7 @@ public class ipv4Test {
     public void testIsPublicIp_String203_1() {
         System.out.println("isPublicIp");
         String addr = "203.0.112.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -910,7 +911,7 @@ public class ipv4Test {
     public void testIsPublicIp_String203_2() {
         System.out.println("isPublicIp");
         String addr = "203.0.113.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -923,7 +924,7 @@ public class ipv4Test {
     public void testIsPublicIp_String203_3() {
         System.out.println("isPublicIp");
         String addr = "203.0.113.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -936,7 +937,7 @@ public class ipv4Test {
     public void testIsPublicIp_String203_4() {
         System.out.println("isPublicIp");
         String addr = "203.0.114.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -949,7 +950,7 @@ public class ipv4Test {
     public void testIsPublicIp_String224_1() {
         System.out.println("isPublicIp");
         String addr = "223.255.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertTrue(result);
     }
@@ -962,7 +963,7 @@ public class ipv4Test {
     public void testIsPublicIp_String224_2() {
         System.out.println("isPublicIp");
         String addr = "224.0.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -979,7 +980,7 @@ public class ipv4Test {
     public void testIsPublicIp_String224_3() {
         System.out.println("isPublicIp");
         String addr = "239.255.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -996,7 +997,7 @@ public class ipv4Test {
     public void testIsPublicIp_String224_4() {
         System.out.println("isPublicIp");
         String addr = "240.0.0.0";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -1013,7 +1014,7 @@ public class ipv4Test {
     public void testIsPublicIp_String240_1() {
         System.out.println("isPublicIp");
         String addr = "255.255.255.254";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
@@ -1027,20 +1028,20 @@ public class ipv4Test {
     public void testIsPublicIp_String255_1() {
         System.out.println("isPublicIp");
         String addr = "255.255.255.255";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isPublicIp(addr);
         assertFalse(result);
     }
     
     
     /**
-     * Test of stringToIpv4 method, of class ipv4.
+     * Test of stringToIpv4 method, of class Ipv4.
      */
     @Test
     public void testStringToIpv4() throws Exception {
         System.out.println("stringToIpv4");
         String addr = "";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         Inet4Address expResult = null;
         Inet4Address result = instance.stringToIpv4(addr);
         assertEquals(expResult, result);
@@ -1049,13 +1050,13 @@ public class ipv4Test {
     }
 
     /**
-     * Test of inetAddressToString method, of class ipv4.
+     * Test of inetAddressToString method, of class Ipv4.
      */
     @Test
     public void testInetAddressToString() {
         System.out.println("inetAddressToString");
         Inet4Address addr = null;
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         String expResult = "";
         String result = instance.inetAddressToString(addr);
         assertEquals(expResult, result);
@@ -1064,12 +1065,12 @@ public class ipv4Test {
     }
 
     /**
-     * Test of toString method, of class ipv4.
+     * Test of toString method, of class Ipv4.
      */
     @Test
     public void testToString() {
         System.out.println("toString");
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         String expResult = "";
         String result = instance.toString();
         assertEquals(expResult, result);
@@ -1078,13 +1079,13 @@ public class ipv4Test {
     }
 
     /**
-     * Test of equals method, of class ipv4.
+     * Test of equals method, of class Ipv4.
      */
     @Test
     public void testEquals() {
         System.out.println("equals");
         Object o = null;
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean expResult = false;
         boolean result = instance.equals(o);
         assertEquals(expResult, result);
@@ -1093,11 +1094,11 @@ public class ipv4Test {
     }
 
     /**
-     * Test of hashCode method, of class ipv4.
+     * Test of hashCode method, of class Ipv4.
      */
     @Test
     public void testHashCode() {
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         int expResult = 0;
         int result = instance.hashCode();
         assertEquals(expResult, result);
@@ -1120,13 +1121,13 @@ public class ipv4Test {
      */
     
     /**
-     * Test of ipSplit method, of class ipv4.
+     * Test of ipSplit method, of class Ipv4.
      */
     @Test
     public void testIpSplit() {
         System.out.println("ipSplit");
         String localHost = "127.0.0.1";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         byte[] result = instance.ipSplit(localHost);
         assertEquals(127, result[0]);
         assertEquals(0, result[1]);
@@ -1135,27 +1136,47 @@ public class ipv4Test {
 
     }
     
-        @Test
+//    @Rule
+//    public ExpectedException except = ExpectedException.none();
+
+    @Test//(expected = ArrayIndexOutOfBoundsException.class)
     public void testIpSplitCIDR() {
         System.out.println("ipSplit");
         String localHost = "127.0.0.1/8";
-        ipv4 instance = new ipv4();
-        byte[] result = instance.ipSplit(localHost);
-        assertEquals(127, result[0]);
-        assertEquals(0, result[1]);
-        assertEquals(0, result[2]);
-        assertEquals(1, result[3]);
+        Ipv4 instance = new Ipv4();
+        try{
+            byte[] result = instance.ipSplit(localHost);
+            assertEquals(127, result[0]);
+            assertEquals(0, result[1]);
+            assertEquals(0, result[2]);
+            assertEquals(1, result[3]);
+ 
+//        try { //should throw an ArrayIndexOutOfBoundsException
+//        except.expect(IndexOutOfBoundsException.class);
         
-        try { //should throw an ArrayIndexOutOfBoundsException
+/*
+https://stackoverflow.com/a/44774816/
+https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions
+*/
+        assertThrows(IndexOutOfBoundsException.class, 
+            () -> {
             assertNotEquals(8, result[4]);
             assertEquals(0, result[4]);
+            }
+        );
+
 //            assertFalse(true);//?
-        }
-        catch(ArrayIndexOutOfBoundsException arrE){
+//        }
+//        catch(ArrayIndexOutOfBoundsException arrE){
 //            System.err.print(arrE.toString());
-            arrE.printStackTrace(); 
-        }
+//            arrE.printStackTrace(); 
+//        }
         
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }       
         
 //code says uninitailized array should  
 //https://stackoverflow.com/questions/27476845/what-is-the-difference-between-a-null-array-and-an-empty-array
@@ -1169,17 +1190,17 @@ public class ipv4Test {
     
     /**public boolean isCIDR(String addr)
      * 
-     * @param addr string of ipv4 address in dot decimal notation or CIDR notation
+     * @param addr string of Ipv4 address in dot decimal notation or CIDR notation
      * @return true iff addr is in CIDR notation
      */
     // https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation
     /**
-     * Test of isCIDR method, of class ipv4.
+     * Test of isCIDR method, of class Ipv4.
      */
     @Test
     public void testIsCIDR_dotDec() {
         String localHost = "127.0.0.1";
-        ipv4 instance = new ipv4();
+        Ipv4 instance = new Ipv4();
         boolean result = instance.isCIDR(localHost);
         assertFalse(result);
     }
@@ -1187,7 +1208,7 @@ public class ipv4Test {
     
         public void testIsCIDR_CIDR(){
             String localHostCIDR = "127.0.0.1/0";
-            ipv4 instance = new ipv4();
+            Ipv4 instance = new Ipv4();
             boolean result2 = instance.isCIDR(localHostCIDR);
             assertTrue(result2);
 
