@@ -263,11 +263,11 @@ public class V4Test {
      * 
 0.0.0.0/8   0.0.0.0–0.255.255.255 
 10.0.0.0/8  10.0.0.0–10.255.255.255     
-100.64.0.0/10   100.64.0.0–100.127.255.255 
+100.64.0.0/10   100.64.0.0–100.127.255.255 //shared address space -- tldr space is shared by ISP's(or other providers / implelmetors / users of CGN Carrier Grade NAT(Network Address Translation)) to ease the ipv4 depletion. So, each network can assign 100.64.0.0/10 to a unique user / private network needing an IP address and send traffic to them from the internet by translating the address when entering the network. (I think?) 
 127.0.0.0/8     127.0.0.0–127.255.255.255 
 169.254.0.0/16  169.254.0.0–169.254.255.255 
 172.16.0.0/12   172.16.0.0–172.31.255.255 
-192.0.0.0/24    192.0.0.0–192.0.0.255 
+192.0.0.0/24    192.0.0.0–192.0.0.255 //not really sure why these tests are failing. 
 192.0.2.0/24    192.0.2.0–192.0.2.255 
 192.88.99.0/24  192.88.99.0–192.88.99.255 
 192.168.0.0/16  192.168.0.0–192.168.255.255 

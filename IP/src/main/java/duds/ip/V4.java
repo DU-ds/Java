@@ -95,14 +95,18 @@ public class V4 {
     //or maybe a better thing would be to make isprivateIP() and isloopback() and isUnicast() etc.
     public boolean isPublicIp(Inet4Address addr){
         return ! (
+                //if it's multicast global it's global
+//              ! addr.isMCGlobal()         || 
+                addr.isMulticastAddress() ||
                 addr.isAnyLocalAddress()  ||
                 addr.isLinkLocalAddress() ||
                 addr.isLoopbackAddress()  ||
+                addr.isSiteLocalAddress() ||                
                 addr.isMCLinkLocal()      ||
                 addr.isMCNodeLocal()      ||
                 addr.isMCOrgLocal()       ||
-                addr.isMCSiteLocal()      ||
-                addr.isSiteLocalAddress()
+                addr.isMCSiteLocal()      
+
         );
         //https://codereview.stackexchange.com/questions/65071/test-if-given-ip-is-a-public-one
     }
