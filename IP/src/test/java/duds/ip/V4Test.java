@@ -20,7 +20,10 @@ import java.net.Inet4Address;
  */
 public class V4Test {
     
+    byte bmin = Byte.MIN_VALUE;
+    
     public V4Test() {
+        
     }
 
 
@@ -33,10 +36,16 @@ public class V4Test {
         System.out.println("isValidIpv4");
         String localHost = "127.0.0.1";
         V4 ip = new V4();
-        boolean expResult = true;
-        boolean result = ip.isValidIpv4(localHost);
-        assertTrue( result);
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue( result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
     }
+    
+    
     /**
     * handles colons correctly
     * addr.length = 4
@@ -46,9 +55,13 @@ public class V4Test {
         System.out.println("isValidIpv4");
         String localHost = "127:0:0:1";
         V4 ip = new V4();
-        boolean expResult = true;
-        boolean result = ip.isValidIpv4(localHost);
-        assertTrue(result);
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);        
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
     }
         /**
     * addr.length > 0
@@ -58,8 +71,13 @@ public class V4Test {
         System.out.println("isValidIpv4");
         String emptyHost = "";
         V4 ip = new V4();
-        boolean result = ip.isValidIpv4(emptyHost);
-        assertFalse(result);
+        try{
+            boolean result = ip.isValidIpv4(emptyHost);
+            assertFalse(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
     }
         /**
     * addr.length <= 4
@@ -69,9 +87,13 @@ public class V4Test {
         System.out.println("isValidIpv4");
         String localHost = "127:0:0:1:102";
         V4 ip = new V4();
-        boolean expResult = true;
-        boolean result = ip.isValidIpv4(localHost);
-        assertFalse(result);
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertFalse(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
     }
 
     /**
@@ -82,9 +104,13 @@ public class V4Test {
         System.out.println("isValidIpv4");
         String localHost = "127";
         V4 ip = new V4();
-        boolean expResult = true;
-        boolean result = ip.isValidIpv4(localHost);
-        assertTrue(result);
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
     }
 
     /**
@@ -95,10 +121,14 @@ public class V4Test {
         System.out.println("isValidIpv4");
         String localHost = "127:0";
         V4 ip = new V4();
-        boolean expResult = true;
-        boolean result = ip.isValidIpv4(localHost);
-        assertTrue(result);
-    }
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
+        }
     
     /**
     * addr.length = 3
@@ -108,10 +138,15 @@ public class V4Test {
         System.out.println("isValidIpv4");
         String localHost = "127:0:7";
         V4 ip = new V4();
-        boolean expResult = true;
-        boolean result = ip.isValidIpv4(localHost);
-        assertTrue(result);
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
     }
+    
 
     /**
      * invalid data
@@ -121,10 +156,15 @@ public class V4Test {
         System.out.println("isValidIpv4");
         String localHost = "string.124.0.1";
         V4 ip = new V4();
-        boolean expResult = true;
-        boolean result = ip.isValidIpv4(localHost);
-        assertTrue(result);
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
     }
+    
     /**
      * CIDR notation
      */
@@ -133,9 +173,13 @@ public class V4Test {
         System.out.println("isValidIpv4");
         String localHost = "200.0.0.0/8";
         V4 ip = new V4();
-        boolean expResult = true;
-        boolean result = ip.isValidIpv4(localHost);
-        assertTrue(result);
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
     }
 
     @Test
@@ -143,9 +187,13 @@ public class V4Test {
         System.out.println("isValidIpv4");
         String localHost = "200.";
         V4 ip = new V4();
-        boolean expResult = true;
-        boolean result = ip.isValidIpv4(localHost);
-        assertTrue(result);
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
     }
     
        
@@ -154,9 +202,13 @@ public class V4Test {
         System.out.println("isValidIpv4");
         String localHost = "200.54.";
         V4 ip = new V4();
-        boolean expResult = true;
-        boolean result = ip.isValidIpv4(localHost);
-        assertTrue(result);
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
     }
      
     @Test
@@ -164,9 +216,13 @@ public class V4Test {
         System.out.println("isValidIpv4");
         String localHost = "200.87.14.";
         V4 ip = new V4();
-        boolean expResult = true;
-        boolean result = ip.isValidIpv4(localHost);
-        assertTrue(result);
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
     }
 
     
@@ -175,10 +231,86 @@ public class V4Test {
         System.out.println("isValidIpv4");
         String localHost = "212.12.98.69/";
         V4 ip = new V4();
-        boolean expResult = true;
-        boolean result = ip.isValidIpv4(localHost);
-        assertTrue(result);
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
     }
+    
+        
+    /**
+    * covers 0
+    */
+    @Test
+    public void testIsValidIpv4_MIN() {
+        System.out.println("isValidIpv4");
+        String localHost = "0:0:0:0";
+        V4 ip = new V4();
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
+    }
+        
+    /**
+    * covers 255
+    */
+    @Test
+    public void testIsValidIpv4_MAX() {
+        System.out.println("isValidIpv4");
+        String localHost = "152:255:255:255/32";
+        V4 ip = new V4();
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
+    }
+        
+    /**
+    * covers > 255
+    */
+    @Test
+    public void testIsValidIpv4_HIGH() {
+        System.out.println("isValidIpv4");
+        String localHost = "127:0:0:1";
+        V4 ip = new V4();
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
+    }
+
+            
+    /**
+    * covers < 0 
+    */
+    @Test
+    public void testIsValidIpv4_LOW() {
+        System.out.println("isValidIpv4");
+        String localHost = "127:0:0:1";
+        V4 ip = new V4();
+        try{
+            boolean result = ip.isValidIpv4(localHost);
+            assertTrue(result);
+        }
+        catch(Exception e){
+            assertTrue(false);
+        }
+    }
+
+    
     
     /**
      * ipv4 address takes on the form:    
@@ -219,7 +351,7 @@ public class V4Test {
      */
     /*
     /**
-     * public boolean isValidIpv4(String addr)
+     * public boolean isValidIpv4(String addr) throws Exception
      * @param addr : string 
      * @return : true iff addr is a valid ipv4 address (of one to four bytes) delimitated by "." or ":", possibly in CIDR notation
      */
@@ -1032,13 +1164,20 @@ public class V4Test {
      * Test of stringToIpv4 method, of class Ipv4.
      */
     @Test
-    public void testStringToIpv4() throws Exception {
+    public void testStringToIpv4(){ 
+        //TODO implement tests
         System.out.println("stringToIpv4");
         String addr = "";
         V4 instance = new V4();
         Inet4Address expResult = null;
-        Inet4Address result = instance.stringToIpv4(addr);
-        assertEquals(expResult, result);
+        try {
+            Inet4Address result = instance.stringToIpv4(addr);
+            assertEquals(expResult, result);
+        }
+        catch(Exception e){
+//            e.printStackTrace();
+            assertFalse(true);//fails 
+        }
     }
 
     /**
@@ -1117,10 +1256,10 @@ public class V4Test {
         String localHost = "127.0.0.1";
         V4 instance = new V4();
         byte[] result = instance.ipSplit(localHost);
-        assertEquals(127, result[0]);
-        assertEquals(0, result[1]);
-        assertEquals(0, result[2]);
-        assertEquals(1, result[3]);
+        assertEquals(127 - bmin, result[0]);
+        assertEquals(0   - bmin, result[1]);
+        assertEquals(0   - bmin, result[2]);
+        assertEquals(1   - bmin, result[3]);
 
     }
     
@@ -1134,10 +1273,10 @@ public class V4Test {
         V4 instance = new V4();
         try{
             byte[] result = instance.ipSplit(localHost);
-            assertEquals(127, result[0]);
-            assertEquals(0, result[1]);
-            assertEquals(0, result[2]);
-            assertEquals(1, result[3]);
+        assertEquals(127 - bmin, result[0]);
+        assertEquals(0   - bmin, result[1]);
+        assertEquals(0   - bmin, result[2]);
+        assertEquals(1   - bmin, result[3]);
  
 //        try { //should throw an ArrayIndexOutOfBoundsException
 //        except.expect(IndexOutOfBoundsException.class);

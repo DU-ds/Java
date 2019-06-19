@@ -28,5 +28,6 @@ public class Main {
             sum += (int) b;
         }
         System.out.println("Sum: " + sum);
+        
     }  
 }

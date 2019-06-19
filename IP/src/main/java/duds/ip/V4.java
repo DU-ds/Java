@@ -21,13 +21,14 @@ public class V4 {
     
     
     /**
-     * public boolean isValidIpv4(String addr)
+     * public boolean isValidIpv4(String addr) throws Exception
      * @param addr : string 
      * @return : true iff addr is a valid ipv4 address (of one to four bytes) delimitated by "." or ":", possibly in CIDR notation
 
      */
-    public boolean isValidIpv4(String addr){
-        return false; //not implemented
+    public boolean isValidIpv4(String addr) throws Exception {
+        byte arr[] = this.ipSplit(addr);
+        return (arr.length <= 4 && arr.length >= 1);
     }
 //    https://stackoverflow.com/questions/3820167/java-regular-expressions-using-pattern-and-matcher
     
@@ -46,15 +47,27 @@ public class V4 {
     }
     
     
-    /**public byte[] ipSplit(String addr) 
+    /**public byte[] ipSplit(String addr)
+     * 
+     * @param addr : string of 1-4 "." or ":" delimitated bytes, possibly with extra CIDR info
+     * @return : up to four bytes from addr; 
+     * maps [0-255] -> [Byte.MIN_VALUE, Byte.MAX_VALUE]
+     * f(x) = x - Byte.MIN_VALUE
+     * 
+     * ignores CIDR notation , discards /foo
+     */
+
+    /** public byte[] ipSplit(String addr)
      * 
      * @param addr : string of 1-4 "." or ":" delimitated bytes, possibly with extra CIDR info
      * @return : up to four bytes from addr; 
      * 
-     * ignores CIDR notation or adds an extra byte for CIDR???
+     * ignores CIDR notation, discards /foo
      */
+    
+    
+    
     public byte[] ipSplit(String addr){
-//        return new byte[3];
         
         if(isCIDR(addr)){//remove cidr component if it exists
             String[] tmp = addr.split("[/]");
@@ -63,11 +76,14 @@ public class V4 {
         }
         
         byte arr[] = new byte[4];
+        int ar[] = new int[4];
         String[] split;
-        split = addr.split("[.:]");
+        split = addr.split("[.:]");//if more symbols r needed as seperators, add to regex in brackets
         
         for(int i = 0; i < split.length; i++){
-            arr[i] = Byte.parseByte(split[i]);
+            ar[i]  = Integer.parseInt(split[i]);
+            ar[i] -= Byte.MIN_VALUE;
+            arr[i] = (byte) ar[i];
         }
 /*
     https://stackoverflow.com/questions/106179/regular-expression-to-match-dns-hostname-or-ip-address
@@ -121,13 +137,14 @@ public class V4 {
         
         try{
             ad = (Inet4Address) InetAddress.getByName(addr);
+            return this.isPublicIp(ad);
         }
         catch(UnknownHostException e){
 //            e.printStackTrace();
-            return false;
+            
         }
         
-        return this.isPublicIp(ad);
+        return false;
     }
     
     public Inet4Address stringToIpv4(String addr) throws Exception {
