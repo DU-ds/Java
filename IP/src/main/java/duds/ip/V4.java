@@ -53,6 +53,8 @@ public class V4 {
      * @return : up to four bytes from addr; 
      * maps [0-255] -> [Byte.MIN_VALUE, Byte.MAX_VALUE]
      * f(x) = x - Byte.MIN_VALUE
+     * g is the inverse of x
+     * g(x) = x + byte.MIN_VALUE
      * 
      * ignores CIDR notation , discards /foo
      */

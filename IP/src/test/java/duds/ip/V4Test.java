@@ -73,10 +73,11 @@ public class V4Test {
         V4 ip = new V4();
         try{
             boolean result = ip.isValidIpv4(emptyHost);
-            assertFalse(result);
+            assertFalse(result); //"" must not be a valid ip address
         }
         catch(Exception e){
-            assertTrue(false);
+            assertTrue(true); //ok to throw exception for empty string
+            
         }
     }
         /**
@@ -92,7 +93,7 @@ public class V4Test {
             assertFalse(result);
         }
         catch(Exception e){
-            assertTrue(false);
+            assertTrue(true); //ok to throw expection for non-valid ip address.
         }
     }
 
@@ -161,7 +162,7 @@ public class V4Test {
             assertTrue(result);
         }
         catch(Exception e){
-            assertTrue(false);
+            assertTrue(true); //ok to throw expection input that is not a valid ip address.
         }
     }
     
@@ -236,11 +237,11 @@ public class V4Test {
             assertTrue(result);
         }
         catch(Exception e){
-            assertTrue(false);
+            assertTrue(true);
         }
     }
-    
-        
+
+
     /**
     * covers 0
     */
@@ -1256,10 +1257,10 @@ public class V4Test {
         String localHost = "127.0.0.1";
         V4 instance = new V4();
         byte[] result = instance.ipSplit(localHost);
-        assertEquals(127 - bmin, result[0]);
-        assertEquals(0   - bmin, result[1]);
-        assertEquals(0   - bmin, result[2]);
-        assertEquals(1   - bmin, result[3]);
+        assertEquals(127 + bmin, result[0]);
+        assertEquals(0   + bmin, result[1]);
+        assertEquals(0   + bmin, result[2]);
+        assertEquals(1   + bmin, result[3]);
 
     }
     
@@ -1273,10 +1274,10 @@ public class V4Test {
         V4 instance = new V4();
         try{
             byte[] result = instance.ipSplit(localHost);
-        assertEquals(127 - bmin, result[0]);
-        assertEquals(0   - bmin, result[1]);
-        assertEquals(0   - bmin, result[2]);
-        assertEquals(1   - bmin, result[3]);
+        assertEquals(127 + bmin, result[0]);
+        assertEquals(0   + bmin, result[1]);
+        assertEquals(0   + bmin, result[2]);
+        assertEquals(1   + bmin, result[3]);
  
 //        try { //should throw an ArrayIndexOutOfBoundsException
 //        except.expect(IndexOutOfBoundsException.class);

@@ -1,174 +1,30 @@
 -------------------------------------------------------------------------------
 Test set: duds.ip.V4Test
 -------------------------------------------------------------------------------
-Tests run: 80, Failures: 26, Errors: 0, Skipped: 0, Time elapsed: 0.066 sec <<< FAILURE!
-duds.ip.V4Test.testIsPublicIp_String255_1()  Time elapsed: 0.016 sec  <<< FAILURE!
+Tests run: 80, Failures: 20, Errors: 0, Skipped: 0, Time elapsed: 0.15 sec <<< FAILURE!
+duds.ip.V4Test.testIsPublicIp_String192_0_0_3()  Time elapsed: 0.017 sec  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
 	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
 	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
 	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String255_1(V4Test.java:1159)
+	at duds.ip.V4Test.testIsPublicIp_String192_0_0_3(V4Test.java:742)
 
-duds.ip.V4Test.testIsPublicIp_String240_1()  Time elapsed: 0 sec  <<< FAILURE!
+duds.ip.V4Test.testIsPublicIp_String192_0_2_2()  Time elapsed: 0.001 sec  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
 	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
 	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
 	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String240_1(V4Test.java:1145)
+	at duds.ip.V4Test.testIsPublicIp_String192_0_2_2(V4Test.java:781)
 
-duds.ip.V4Test.testInetAddressToString()  Time elapsed: 0.008 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <> but was: <null>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:54)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:195)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:184)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:179)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:508)
-	at duds.ip.V4Test.testInetAddressToString(V4Test.java:1193)
-
-duds.ip.V4Test.testIsPublicIp_String192_88_2()  Time elapsed: 0.001 sec  <<< FAILURE!
+duds.ip.V4Test.testIsPublicIp_String192_0_2_3()  Time elapsed: 0.004 sec  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
 	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
 	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
 	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String192_88_2(V4Test.java:832)
-
-duds.ip.V4Test.testIsPublicIp_String192_88_3()  Time elapsed: 0 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String192_88_3(V4Test.java:845)
-
-duds.ip.V4Test.testIsPublicIp_String198_51_2()  Time elapsed: 0 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String198_51_2(V4Test.java:990)
-
-duds.ip.V4Test.testIsPublicIp_String198_18_2()  Time elapsed: 0.001 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String198_18_2(V4Test.java:937)
-
-duds.ip.V4Test.testIsPublicIp_String192_0_2_2()  Time elapsed: 0.002 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String192_0_2_2(V4Test.java:780)
-
-duds.ip.V4Test.testIsPublicIp_String198_18_3()  Time elapsed: 0 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String198_18_3(V4Test.java:950)
-
-duds.ip.V4Test.testIsPublicIp_String203_2()  Time elapsed: 0.001 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String203_2(V4Test.java:1042)
-
-duds.ip.V4Test.testIsPublicIp_String224_4()  Time elapsed: 0.001 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String224_4(V4Test.java:1128)
-
-duds.ip.V4Test.testIsPublicIp_String203_3()  Time elapsed: 0 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String203_3(V4Test.java:1055)
-
-duds.ip.V4Test.testIsPublicIp_String198_51_3()  Time elapsed: 0 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String198_51_3(V4Test.java:1003)
-
-duds.ip.V4Test.testIsPublicIp_String192_0_0_3()  Time elapsed: 0 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String192_0_0_3(V4Test.java:741)
-
-duds.ip.V4Test.testIsPublicIp_String192_0_2_3()  Time elapsed: 0.001 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String192_0_2_3(V4Test.java:793)
-
-duds.ip.V4Test.testIsPublicIp_String192_0_0_2()  Time elapsed: 0.002 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String192_0_0_2(V4Test.java:728)
-
-duds.ip.V4Test.testIpSplitCIDR()  Time elapsed: 0 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <255> but was: <-1>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:54)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:195)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:327)
-	at duds.ip.V4Test.testIpSplitCIDR(V4Test.java:1276)
-
-duds.ip.V4Test.testIpSplit()  Time elapsed: 0 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <255> but was: <-1>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:54)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:195)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:327)
-	at duds.ip.V4Test.testIpSplit(V4Test.java:1259)
-
-duds.ip.V4Test.testIsPublicIp_Inet4Address()  Time elapsed: 0 sec  <<< FAILURE!
-java.lang.NullPointerException
-	at duds.ip.V4.isPublicIp(V4.java:116)
-	at duds.ip.V4Test.testIsPublicIp_Inet4Address(V4Test.java:372)
-
-duds.ip.V4Test.testIsValidIpv4_invalid()  Time elapsed: 0 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:35)
-	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:137)
-	at duds.ip.V4Test.testIsValidIpv4_invalid(V4Test.java:164)
-
-duds.ip.V4Test.testIsValidIpv4_trailing4()  Time elapsed: 0 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:35)
-	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:137)
-	at duds.ip.V4Test.testIsValidIpv4_trailing4(V4Test.java:239)
+	at duds.ip.V4Test.testIsPublicIp_String192_0_2_3(V4Test.java:794)
 
 duds.ip.V4Test.testIsPublicIp_String0_1()  Time elapsed: 0.002 sec  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
@@ -176,7 +32,28 @@ org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
 	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
 	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
 	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String0_1(V4Test.java:429)
+	at duds.ip.V4Test.testIsPublicIp_String0_1(V4Test.java:430)
+
+duds.ip.V4Test.testIsPublicIp_String192_0_0_2()  Time elapsed: 0.002 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
+	at duds.ip.V4Test.testIsPublicIp_String192_0_0_2(V4Test.java:729)
+
+duds.ip.V4Test.testIsPublicIp_String100_2()  Time elapsed: 0.002 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
+	at duds.ip.V4Test.testIsPublicIp_String100_2(V4Test.java:521)
+
+duds.ip.V4Test.testIsPublicIp_Inet4Address()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at duds.ip.V4.isPublicIp(V4.java:118)
+	at duds.ip.V4Test.testIsPublicIp_Inet4Address(V4Test.java:373)
 
 duds.ip.V4Test.testIsPublicIp_String100_3()  Time elapsed: 0 sec  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
@@ -184,29 +61,102 @@ org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
 	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
 	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
 	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String100_3(V4Test.java:533)
+	at duds.ip.V4Test.testIsPublicIp_String100_3(V4Test.java:534)
 
-duds.ip.V4Test.testIsValidIpv4_len0()  Time elapsed: 0.003 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:35)
-	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:137)
-	at duds.ip.V4Test.testIsValidIpv4_len0(V4Test.java:79)
-
-duds.ip.V4Test.testIsPublicIp_String100_2()  Time elapsed: 0 sec  <<< FAILURE!
+duds.ip.V4Test.testIsPublicIp_String203_3()  Time elapsed: 0 sec  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
 	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
 	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
 	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
-	at duds.ip.V4Test.testIsPublicIp_String100_2(V4Test.java:520)
+	at duds.ip.V4Test.testIsPublicIp_String203_3(V4Test.java:1056)
 
-duds.ip.V4Test.testIsValidIpv4_len5()  Time elapsed: 0.004 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+duds.ip.V4Test.testIsPublicIp_String192_88_2()  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:35)
-	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:137)
-	at duds.ip.V4Test.testIsValidIpv4_len5(V4Test.java:95)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
+	at duds.ip.V4Test.testIsPublicIp_String192_88_2(V4Test.java:833)
+
+duds.ip.V4Test.testIsPublicIp_String198_18_2()  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
+	at duds.ip.V4Test.testIsPublicIp_String198_18_2(V4Test.java:938)
+
+duds.ip.V4Test.testIsPublicIp_String198_18_3()  Time elapsed: 0.003 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
+	at duds.ip.V4Test.testIsPublicIp_String198_18_3(V4Test.java:951)
+
+duds.ip.V4Test.testIsPublicIp_String192_88_3()  Time elapsed: 0.001 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
+	at duds.ip.V4Test.testIsPublicIp_String192_88_3(V4Test.java:846)
+
+duds.ip.V4Test.testIsPublicIp_String198_51_2()  Time elapsed: 0.003 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
+	at duds.ip.V4Test.testIsPublicIp_String198_51_2(V4Test.java:991)
+
+duds.ip.V4Test.testIsPublicIp_String198_51_3()  Time elapsed: 0.001 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
+	at duds.ip.V4Test.testIsPublicIp_String198_51_3(V4Test.java:1004)
+
+duds.ip.V4Test.testIsPublicIp_String203_2()  Time elapsed: 0.001 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
+	at duds.ip.V4Test.testIsPublicIp_String203_2(V4Test.java:1043)
+
+duds.ip.V4Test.testIsPublicIp_String224_4()  Time elapsed: 0.002 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
+	at duds.ip.V4Test.testIsPublicIp_String224_4(V4Test.java:1129)
+
+duds.ip.V4Test.testIsPublicIp_String240_1()  Time elapsed: 0.001 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
+	at duds.ip.V4Test.testIsPublicIp_String240_1(V4Test.java:1146)
+
+duds.ip.V4Test.testInetAddressToString()  Time elapsed: 0.018 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <> but was: <null>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:54)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:195)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:184)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:179)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:508)
+	at duds.ip.V4Test.testInetAddressToString(V4Test.java:1194)
+
+duds.ip.V4Test.testIsPublicIp_String255_1()  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:40)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:35)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:185)
+	at duds.ip.V4Test.testIsPublicIp_String255_1(V4Test.java:1160)
 
