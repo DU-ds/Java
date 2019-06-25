@@ -1164,15 +1164,20 @@ public class V4Test {
     /**
      * Test of stringToIpv4 method, of class Ipv4.
      */
-    @Test
+    @Test//running test causes compilation to fail
     public void testStringToIpv4(){ 
         //TODO implement tests
         System.out.println("stringToIpv4");
-        String addr = "";
+        String addr = "15.2.6.18";
         V4 instance = new V4();
-        Inet4Address expResult = null;
+        byte[] b = new byte[] {15,2,6,18};
+        
+        
         try {
-            Inet4Address result = instance.stringToIpv4(addr);
+            Inet4Address lt =  (Inet4Address) Inet4Address.getByAddress(b) ;
+            Inet4Address lt2 = instance.stringToIpv4(addr);
+            byte[] expResult = lt.getAddress();
+            byte[] result = lt2.getAddress();
             assertEquals(expResult, result);
         }
         catch(Exception e){
@@ -1184,14 +1189,30 @@ public class V4Test {
     /**
      * Test of inetAddressToString method, of class Ipv4.
      */
-    @Test
+    @Test//running test causes compilation to fail
     public void testInetAddressToString() {
         System.out.println("inetAddressToString");
         Inet4Address addr = null;
         V4 instance = new V4();
-        String expResult = "";
-        String result = instance.inetAddressToString(addr);
-        assertEquals(expResult, result);
+//        String expResult = "";
+//        String result = instance.inetAddressToString(addr);
+//        assertEquals(expResult, result);
+        
+        String expResult = "15.2.6.18";
+        byte[] b = new byte[] {15,2,6,18};
+        
+        
+        try {
+            Inet4Address lt =  (Inet4Address) Inet4Address.getByAddress(b);
+            byte[] result = lt.getAddress();
+            assertEquals(expResult, result);
+        }
+        catch(Exception e){
+//            e.printStackTrace();
+            assertFalse(true);//fails 
+        }
+        
+        
     }
 
     /**

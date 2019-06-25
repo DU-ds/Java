@@ -154,7 +154,8 @@ public class V4 {
     }
     
     public String inetAddressToString(Inet4Address addr){
-        return null; //not implemented
+        return addr.getHostAddress();
+//        return null; //not implemented
     }
     
 /*    public String toString(){
