@@ -1362,6 +1362,62 @@ https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions
             assertTrue(result2);
 
         }
+    
+    /***
+     * public boolean isPrivateIP(byte[] arr)
+     * 
+     * @param arr : byte array with one to four bytes (in order)
+     * @return    : true iff bytes correspond to a private ip address
+     * 
+     * 3 ranges of private ip (source RFC 1918 part 3
+     * https://tools.ietf.org/html/rfc1918
+     * 
+     * 10.0.0.0/8   10.0.0.0 – 10.255.255.255
+     * 172.16.0.0/12    172.16.0.0 – 172.31.255.255 	
+     * 192.168.0.0/16 	192.168.0.0 – 192.168.255.255
+     */
+        
+        /***
+         * test strategy for public boolean isPrivateIP(byte[] arr)
+         * 
+         * 
+         * 
+         */
+        
+    /**
+     * Test of isPrivateIP method, of class V4.
+     */
+    @Test
+    public void testIsPrivateIP_byteArr() {
+    }
+
+    /**
+     * Test of isPrivateIP method, of class V4.
+     */
+    @Test
+    public void testIsPrivateIP_String() {
+    }
+
+    /**
+     * Test of isValidIpv4 method, of class V4.
+     */
+    @Test
+    public void testIsValidIpv4() throws Exception {
+    }
+
+    /**
+     * Test of isCIDR method, of class V4.
+     */
+    @Test
+    public void testIsCIDR() {
+    }
+
+    /**
+     * Test of isPublicIp method, of class V4.
+     */
+    @Test
+    public void testIsPublicIp_String() {
+    }
 
     
 }
