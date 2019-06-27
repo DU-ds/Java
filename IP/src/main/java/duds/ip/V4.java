@@ -20,6 +20,25 @@ public class V4 {
     }
     
     
+    /***
+     * public boolean isPrivateIP(byte[] arr)
+     * 
+     * @param arr : byte array with one to four bytes (in order)
+     * @return    : true iff bytes correspond to a private ip address
+     * 
+     * 3 ranges of private ip
+     * 10.0.0.0/8   10.0.0.0 – 10.255.255.255
+     * 172.16.0.0/12    172.16.0.0 – 172.31.255.255 	
+     * 192.168.0.0/16 	192.168.0.0 – 192.168.255.255
+     */
+    public boolean isPrivateIP(byte[] arr){
+        return false;//not implemented
+    }
+    
+    public boolean isPrivateIP(String addr){
+        return false;//not implemented
+    }
+    
     /**
      * public boolean isValidIpv4(String addr) throws Exception
      * @param addr : string 
