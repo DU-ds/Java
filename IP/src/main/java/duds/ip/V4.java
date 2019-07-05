@@ -18,6 +18,41 @@ public class V4 {
     public V4(){
         
     }
+    /***
+     * 
+     * @param arr each element of arr must be <= 0 and >= 255
+     * @return f(x) = x + Byte.MIN_VALUE for each element x in arr
+     * 
+     * 
+     * ip address bytes are encoded in the following way:
+     * f: [0-255] -> [Byte.MIN_VALUE, Byte.MAX_VALUE]
+     * f(x) = x + Byte.MIN_VALUE
+     * g: [Byte.MIN_VALUE, Byte.MAX_VALUE] --> [0-255]
+     * g(x) = x - byte.MIN_VALUE
+     * g is the inverse of x
+     * 
+     * since bytes are encoded in java as [-128, 127]
+     * 
+     * isPrivateIP understands arr[i] == -128 implies arr[i] encodes 0
+     * 
+     * so [ -1, -128, -128, -127] encodes 127.0.0.1
+     * 
+     * public byte[] ipByteToJavaByte(int[] arr) implements f
+     * while public int[] javaByteToIpByte(byte[] arr) implements g
+     */
+    public byte[] ipByteToJavaByte(int[] arr){
+        return null; //not implemented
+    }
+    
+    /***
+     * 
+     * @param arr 
+     * @return for every x in arr, returns g(x) = x - byte.MIN_VALUE 
+     * f(x) = x + Byte.MIN_VALUE for each element x in arr 
+     */
+    public int[] javaByteToIpByte(byte[] arr){
+        return null; //not implemented
+    }
     
     
     /***
@@ -25,6 +60,7 @@ public class V4 {
      * 
      * @param arr : byte array with one to four bytes (in order)
      * @return    : true iff bytes correspond to a private ip address
+     * 
      * 
      * 3 ranges of private ip (source RFC 1918 part 3
      * https://tools.ietf.org/html/rfc1918
@@ -38,7 +74,7 @@ public class V4 {
     }
     
     /***
-     * public boolean isPrivateIP(byte[] arr)
+     * public boolean isPrivateIP(String addr)
      * 
      * @param addr : string encoding one to four bytes (in order) 
      * with '.' or ':' separating the bytes
@@ -87,9 +123,9 @@ public class V4 {
      * @param addr : string of 1-4 "." or ":" delimitated bytes, possibly with extra CIDR info
      * @return : up to four bytes from addr; 
      * maps [0-255] -> [Byte.MIN_VALUE, Byte.MAX_VALUE]
-     * f(x) = x - Byte.MIN_VALUE
+     * f(x) = x + Byte.MIN_VALUE
      * g is the inverse of x
-     * g(x) = x + byte.MIN_VALUE
+     * g(x) = x - byte.MIN_VALUE
      * 
      * ignores CIDR notation , discards /foo
      */

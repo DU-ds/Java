@@ -339,6 +339,7 @@ public class V4Test {
      * each byte is an integer from [0, 255]  -- test with 
      * valid and invalid data between delimiters
      * 
+     * 
      * if @return is true then 0 <  addr.length < 5
      * 
      * accepts CIDR notation :
@@ -1369,6 +1370,8 @@ https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions
      * @param arr : byte array with one to four bytes (in order)
      * @return    : true iff bytes correspond to a private ip address
      * 
+     * bytes use 
+     * 
      * 3 ranges of private ip (source RFC 1918 part 3
      * https://tools.ietf.org/html/rfc1918
      * 
@@ -1417,6 +1420,20 @@ https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions
      */
     @Test
     public void testIsPublicIp_String() {
+    }
+
+    /**
+     * Test of ipByteToJavaByte method, of class V4.
+     */
+    @Test
+    public void testIpByteToJavaByte() {
+    }
+
+    /**
+     * Test of javaByteToIpByte method, of class V4.
+     */
+    @Test
+    public void testJavaByteToIpByte() {
     }
 
     
